@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women’s Empowerment Summit & Nissa Awards 2026 | Future Leaders Parliament</title>
+  <meta name="description" content="The countdown begins for the Women’s Empowerment Summit & Nissa Awards 2026! Honoring visionary female leaders, innovators, and changemakers shaping the future." />
+  
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'flp-green': '#022F18',
+            'flp-green-dark': '#011c0e',
+            'flp-green-light': '#044d28',
+            'flp-gold': '#D2A23C',
+            'flp-gold-light': '#e4bd5f',
+            'flp-gold-muted': 'rgba(210, 162, 60, 0.2)',
+            'flp-gold-border': 'rgba(210, 162, 60, 0.4)',
+            'flp-white': '#FFFFFF',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+    .gold-accent-line {
+      width: 64px;
+      height: 3px;
+      background-color: #D2A23C;
+    }
+    .award-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .award-card:hover {
+      transform: translateY(-4px);
+      border-color: #D2A23C;
+      box-shadow: 0 16px 32px -10px rgba(210, 162, 60, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="events.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">Events</a>
+        <a href="join.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Join Us</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA in Header -->
+      <div class="flex items-center gap-3">
+        <a href="join.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Become a Member
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="events.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">Events</a>
+      <a href="join.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Join Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="join.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Become a Member
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <section class="pt-28 pb-4 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-2 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/60">
+        <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+        <span>/</span>
+        <a href="events.html" class="hover:text-flp-gold transition-colors">Events Directory</a>
+        <span>/</span>
+        <span class="text-flp-gold">Women’s Empowerment Summit & Nissa Awards 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Banner with Prestigious Awards Aesthetic -->
+  <section class="relative py-20 bg-grid-pattern border-b border-flp-gold-muted overflow-hidden">
+    <!-- Ambient Glow Effects -->
+    <div class="absolute -right-24 -top-24 w-96 h-96 bg-flp-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-flp-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <div class="max-w-4xl space-y-6">
+        
+        <!-- Live Countdown Alert Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 bg-flp-gold/20 border border-flp-gold text-flp-gold rounded-sm text-xs font-heading font-bold uppercase tracking-widest shadow-lg">
+          <span class="w-2.5 h-2.5 rounded-full bg-flp-gold animate-ping"></span>
+          <span>The Countdown Begins • Session 2026</span>
+        </div>
+
+        <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-flp-white leading-tight">
+          Women’s Empowerment Summit & <br />
+          <span class="text-flp-gold">Nissa Awards 2026</span>
+        </h1>
+
+        <p class="text-base sm:text-xl text-flp-white/90 leading-relaxed font-medium">
+          We are getting ready to honor the visionary female leaders, innovators, and changemakers who are shaping the future and creating lasting impact. Something truly extraordinary is under wraps — <strong>who will take home the awards this year?</strong>
+        </p>
+
+        <!-- Teaser Highlight Box -->
+        <div class="bg-flp-green-dark border-l-4 border-flp-gold p-5 rounded-r-sm space-y-2">
+          <div class="text-xs font-heading font-bold uppercase tracking-wider text-flp-gold flex items-center gap-2">
+            <span>📢</span> Official Announcement
+          </div>
+          <p class="text-sm text-flp-white/85 leading-relaxed">
+            Stay tuned! Full event details, distinguished keynote speaker lineups, and official nomination guidelines are coming soon.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20am%20interested%20in%20the%20Women’s%20Empowerment%20Summit%20%26%20Nissa%20Awards%202026.%20Please%20notify%20me%20when%20nominations%20open." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-xl">
+            <span>Pre-Register for Nomination Alert</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="#focus" class="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+            <span>Explore Event Pillars</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Event Pillars / Focus Section (Leadership, Innovation, Impact) -->
+  <section id="focus" class="py-20 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block">
+          🌟 Summit Core Pillars
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-flp-white uppercase tracking-tight">
+          Event Focus & Philosophy
+        </h2>
+        <div class="gold-accent-line mx-auto mt-3 mb-4"></div>
+        <p class="text-sm sm:text-base text-flp-white/80 leading-relaxed">
+          The Women’s Empowerment Summit & Nissa Awards 2026 is anchored upon three transformative pillars designed to elevate female trailblazers across Pakistan.
+        </p>
+      </div>
+
+      <!-- 3 Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1: Leadership -->
+        <div class="award-card bg-flp-green border-2 border-flp-gold-border rounded-sm p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-sm bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-flp-gold text-2xl">
+              👑
+            </div>
+            <span class="text-[11px] font-heading font-bold uppercase tracking-wider text-flp-gold block">Pillar 01</span>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Leadership
+            </h3>
+            <p class="text-sm text-flp-white/80 leading-relaxed">
+              <strong>Celebrating trailblazers shattering glass ceilings.</strong> Recognizing women in parliament, judiciary, public administration, and corporate governance who have paved pathways for future generations.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-flp-gold-muted/40">
+            <span class="text-xs font-heading font-semibold text-flp-gold uppercase tracking-wider">
+              Governance • Policy • Mentorship
+            </span>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Innovation -->
+        <div class="award-card bg-flp-green border-2 border-flp-gold rounded-sm p-8 flex flex-col justify-between relative overflow-hidden shadow-xl">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-sm bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-flp-gold text-2xl">
+              💡
+            </div>
+            <span class="text-[11px] font-heading font-bold uppercase tracking-wider text-flp-gold block">Pillar 02</span>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Innovation
+            </h3>
+            <p class="text-sm text-flp-white/80 leading-relaxed">
+              <strong>Spotlighting visionary ideas and solutions.</strong> Honoring female tech founders, researchers, legal innovators, and creators engineering sustainable breakthroughs in the digital and physical realms.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-flp-gold-muted/40">
+            <span class="text-xs font-heading font-semibold text-flp-gold uppercase tracking-wider">
+              Technology • Research • Enterprise
+            </span>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Impact -->
+        <div class="award-card bg-flp-green border-2 border-flp-gold-border rounded-sm p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-sm bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-flp-gold text-2xl">
+              🌍
+            </div>
+            <span class="text-[11px] font-heading font-bold uppercase tracking-wider text-flp-gold block">Pillar 03</span>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Impact
+            </h3>
+            <p class="text-sm text-flp-white/80 leading-relaxed">
+              <strong>Recognizing meaningful change in our communities.</strong> Acknowledging grassroots activists, human rights defenders, educators, and social reformers whose work uplifts marginalized populations.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-flp-gold-muted/40">
+            <span class="text-xs font-heading font-semibold text-flp-gold uppercase tracking-wider">
+              Community • Human Rights • Grassroots
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Detailed Narrative & Award Categories Preview -->
+  <section class="py-20 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left 7 Cols: Detailed Overview -->
+        <div class="lg:col-span-7 space-y-8">
+          
+          <div class="space-y-3">
+            <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block">
+              Grand Ceremony & Plenary
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-heading font-extrabold uppercase text-flp-white tracking-tight">
+              About the Summit & Nissa Awards
+            </h2>
+            <div class="gold-accent-line mb-4"></div>
+          </div>
+
+          <div class="space-y-4 text-sm text-flp-white/85 leading-relaxed">
+            <p>
+              The <strong>Women’s Empowerment Summit & Nissa Awards 2026</strong> is Future Leaders Parliament’s flagship initiative dedicated to celebrating female excellence in governance, social innovation, and public service.
+            </p>
+            <p>
+              Across Pakistan, women are driving transformative reforms in courtrooms, legislative chambers, university research labs, and grassroots communities. The <strong>Nissa Awards</strong> were established to recognize these extraordinary contributions, offering a prestigious institutional platform that amplifies their voices and inspires millions of aspiring young women leaders.
+            </p>
+            <p>
+              The upcoming summit will feature high-level panel discussions, keynote addresses by prominent jurists and parliamentarians, masterclasses on leadership and media advocacy, culminating in the grand Nissa Awards presentation ceremony.
+            </p>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="bg-flp-green-dark border border-flp-gold-muted p-4 rounded-sm space-y-1">
+              <div class="text-flp-gold font-bold text-xs uppercase">🏆 National Juried Selection</div>
+              <p class="text-xs text-flp-white/70">Nominations evaluated by an independent jury of senior jurists, academics, and civic leaders.</p>
+            </div>
+            <div class="bg-flp-green-dark border border-flp-gold-muted p-4 rounded-sm space-y-1">
+              <div class="text-flp-gold font-bold text-xs uppercase">📜 Verified Citations & Medals</div>
+              <p class="text-xs text-flp-white/70">Official FLP parliamentary medal of excellence and commemorative citation presented to all laureates.</p>
+            </div>
+            <div class="bg-flp-green-dark border border-flp-gold-muted p-4 rounded-sm space-y-1">
+              <div class="text-flp-gold font-bold text-xs uppercase">🎙️ High-Level Panel Plenaries</div>
+              <p class="text-xs text-flp-white/70">Interactive policy sessions debating gender parity in legislation and civic representation.</p>
+            </div>
+            <div class="bg-flp-green-dark border border-flp-gold-muted p-4 rounded-sm space-y-1">
+              <div class="text-flp-gold font-bold text-xs uppercase">🤝 Mentorship Cohort 2026</div>
+              <p class="text-xs text-flp-white/70">Connecting young women delegates with established female mentors across public institutions.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 5 Cols: Award Categories Showcase & Stay Tuned Card -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="bg-flp-green-dark border-2 border-flp-gold rounded-sm p-7 space-y-5 shadow-2xl">
+            <div class="border-b border-flp-gold-muted/50 pb-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-wider text-flp-gold block">Prestigious Portfolios</span>
+              <h3 class="text-xl font-heading font-black text-flp-white uppercase">Nissa Awards 2026 Categories</h3>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="p-3 bg-flp-green border border-flp-gold-muted/60 rounded-sm">
+                <div class="font-bold text-flp-gold uppercase">01. Trailblazing Woman in Governance</div>
+                <div class="text-flp-white/70 mt-0.5">Excellence in parliamentary advocacy, legal practice, and public administration.</div>
+              </div>
+
+              <div class="p-3 bg-flp-green border border-flp-gold-muted/60 rounded-sm">
+                <div class="font-bold text-flp-gold uppercase">02. Innovation & STEM Visionary Award</div>
+                <div class="text-flp-white/70 mt-0.5">Pioneering tech startups, research publications, and digital solutions.</div>
+              </div>
+
+              <div class="p-3 bg-flp-green border border-flp-gold-muted/60 rounded-sm">
+                <div class="font-bold text-flp-gold uppercase">03. Grassroots Social Impact Award</div>
+                <div class="text-flp-white/70 mt-0.5">Transforming marginalized communities through education and healthcare.</div>
+              </div>
+
+              <div class="p-3 bg-flp-green border border-flp-gold-muted/60 rounded-sm">
+                <div class="font-bold text-flp-gold uppercase">04. Youth Changemaker & Rising Star</div>
+                <div class="text-flp-white/70 mt-0.5">Young women under 25 demonstrating exceptional leadership and civic zeal.</div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-flp-gold-muted/50 text-center">
+              <span class="text-[11px] font-heading font-bold text-flp-gold uppercase tracking-widest block mb-3">
+                Nominations Opening Soon
+              </span>
+              <a href="https://wa.me/923097951212?text=Hi%20FLP%20Secretariat%2C%20please%20send%20me%20the%20nomination%20guidelines%20for%20Nissa%20Awards%202026%20as%20soon%20as%20they%20open." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+                <span>Request Nomination Packet via WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+      <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block">
+        Stay Connected
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-heading font-black text-flp-white uppercase tracking-tight">
+        Join the Women Leadership Movement
+      </h2>
+      <p class="text-sm sm:text-base text-flp-white/80 max-w-xl mx-auto leading-relaxed">
+        Be the first to receive updates on keynote speakers, session tickets, and nomination dates for the Women’s Empowerment Summit & Nissa Awards 2026.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a href="join.html" class="px-8 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+          Become An FLP Member
+        </a>
+        <a href="events.html" class="px-8 py-3.5 bg-flp-green text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Back to Events Directory
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="events.html" class="text-flp-gold transition-colors">Events</a>
+          <a href="join.html" class="hover:text-flp-gold transition-colors">Join Us</a>
+          <a href="contact.html" class="hover:text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

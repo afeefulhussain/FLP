@@ -276,6 +276,10 @@
               Browse Other Events
             </h4>
             <div class="space-y-2 text-xs">
+              <a href="event-nissa-awards.html" class="block p-3 bg-flp-green-dark border border-flp-gold-muted/50 rounded-sm hover:border-flp-gold transition-colors">
+                <div class="font-bold text-flp-white uppercase">Women’s Summit & Nissa Awards</div>
+                <div class="text-[11px] text-flp-gold mt-0.5">🌟 Countdown Active 2026</div>
+              </a>
               <a href="event-law-webinar.html" class="block p-3 bg-flp-green-dark border border-flp-gold-muted/50 rounded-sm hover:border-flp-gold transition-colors">
                 <div class="font-bold text-flp-white uppercase">Law Webinar (Adv. Nisa Ara)</div>
                 <div class="text-[11px] text-flp-gold mt-0.5">Constitutional Literacy</div>
@@ -476,7 +480,9 @@
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('id');
 
-    if (eventId === 'law-webinar') {
+    if (eventId === 'nissa-awards') {
+      window.location.replace('event-nissa-awards.html');
+    } else if (eventId === 'law-webinar') {
       window.location.replace('event-law-webinar.html');
     } else {
       const data = eventsDB[eventId] || eventsDB['parliamentary-simulation'];
