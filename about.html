@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Future Leaders Parliament</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flp: {
+              green: '#022F18',
+              gold: '#D2A23C',
+              white: '#FFFFFF',
+              'green-dark': '#011c0e',
+              'green-card': '#033b1e',
+              'gold-muted': 'rgba(210, 162, 60, 0.2)',
+              'gold-border': 'rgba(210, 162, 60, 0.35)'
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      caret-color: transparent;
+    }
+    input, textarea, [contenteditable="true"] {
+      caret-color: auto;
+    }
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+    .gold-accent-line {
+      width: 64px;
+      height: 3px;
+      background-color: #D2A23C;
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA & Donate Button in Header -->
+      <div class="flex items-center gap-3">
+        <a href="donate.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Donate Us
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="donate.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Donate Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="donate.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Donate Us
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header Hero Banner (Prolonged with Photo Background) -->
+  <section class="relative min-h-[65vh] sm:min-h-[72vh] pt-40 pb-24 flex items-center border-b border-flp-gold-muted overflow-hidden">
+    
+    <!-- Background Image with Depth & Dark Green Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="about-hero.jpg" 
+        alt="Future Leaders Parliament Team & Delegates" 
+        class="w-full h-full object-cover object-center filter brightness-[0.75]"
+      />
+      <!-- Deep Institutional Overlay Gradients for Perfect Readability -->
+      <div class="absolute inset-0 bg-gradient-to-r from-flp-green-dark/95 via-flp-green/85 to-flp-green-dark/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-flp-green-dark via-transparent to-flp-green-dark/80"></div>
+      <div class="absolute inset-0 bg-grid-pattern opacity-25"></div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div class="max-w-3xl">
+        <!-- Clean Typography Tagline -->
+        <span class="font-heading font-bold text-xs sm:text-sm tracking-widest text-flp-gold uppercase block mb-4">
+          Voice of the Next Generation
+        </span>
+
+        <h1 class="font-heading font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-flp-white mb-6 leading-tight">
+          About <span class="text-flp-gold">The Parliament</span>
+        </h1>
+        <p class="text-base sm:text-xl text-flp-white/90 leading-relaxed mb-8">
+          An institutional platform committed to civic responsibility, constitutional literacy, and equipping youth to lead national dialogue.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#origins" class="px-6 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+            Our Origin & Story ↓
+          </a>
+          <a href="departments.html" class="px-6 py-3 bg-flp-green/80 backdrop-blur-sm text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+            Shadow Cabinet
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-flp-gold-border to-transparent"></div>
+  </section>
+
+  <!-- Main Narrative & Story -->
+  <section id="origins" class="py-24 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6">
+          <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Our Origins</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-flp-white uppercase tracking-tight mb-4">
+            Forging Future Statesmen & Leaders
+          </h2>
+          <div class="gold-accent-line mb-6"></div>
+          
+          <p class="text-sm sm:text-base text-flp-white/85 leading-relaxed mb-4">
+            Founded with an uncompromising conviction that Pakistan's youth are the primary catalysts of national advancement, the <strong>Future Leaders Parliament (FLP)</strong> provides a disciplined, non-partisan arena for parliamentary simulation, policy debates, and executive training.
+          </p>
+          <p class="text-sm sm:text-base text-flp-white/75 leading-relaxed mb-6">
+            We simulate the mechanics of provincial and national assemblies—demanding rigorous research, structured argument, diplomatic consensus, and actionable legislative drafting from our delegates.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-flp-green p-8 sm:p-10 border border-flp-gold-border rounded-sm shadow-xl">
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-4 flex items-center gap-2">
+              <span class="text-flp-gold">■</span> Our Vision
+            </h3>
+            <p class="text-sm text-flp-white/80 leading-relaxed mb-6">
+              To cultivate an articulate, intellectually grounded, and ethically conscious generation of young leaders equipped to tackle complex socio-economic and geopolitical challenges.
+            </p>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-4 flex items-center gap-2">
+              <span class="text-flp-gold">■</span> Our Mission
+            </h3>
+            <p class="text-sm text-flp-white/80 leading-relaxed">
+              To bridge the divide between youth potential and governance realities through structured parliamentary assemblies, capacity-building workshops, and direct policy engagement.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Institutional Values -->
+  <section class="py-24 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Ethical Foundations</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-flp-white uppercase tracking-tight mb-4">Our Core Values</h2>
+        <div class="gold-accent-line mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-flp-green-dark p-8 border border-flp-gold-border rounded-sm">
+          <span class="text-flp-gold font-heading font-bold text-2xl mb-4 block">01</span>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2">Democratic Integrity</h3>
+          <p class="text-xs text-flp-white/70 leading-relaxed">
+            Fostering respect for procedural order, constitutional rules, pluralistic debate, and democratic consensus.
+          </p>
+        </div>
+
+        <div class="bg-flp-green-dark p-8 border border-flp-gold-border rounded-sm">
+          <span class="text-flp-gold font-heading font-bold text-2xl mb-4 block">02</span>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2">Merit & Rigor</h3>
+          <p class="text-xs text-flp-white/70 leading-relaxed">
+            Demanding fact-based policy argumentation, empirical research, and intellectual honesty across all committees.
+          </p>
+        </div>
+
+        <div class="bg-flp-green-dark p-8 border border-flp-gold-border rounded-sm">
+          <span class="text-flp-gold font-heading font-bold text-2xl mb-4 block">03</span>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2">Youth Inclusivity</h3>
+          <p class="text-xs text-flp-white/70 leading-relaxed">
+            Ensuring delegates from diverse regions, educational backgrounds, and social spectrums have an equal voice.
+          </p>
+        </div>
+
+        <div class="bg-flp-green-dark p-8 border border-flp-gold-border rounded-sm">
+          <span class="text-flp-gold font-heading font-bold text-2xl mb-4 block">04</span>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2">Actionable Impact</h3>
+          <p class="text-xs text-flp-white/70 leading-relaxed">
+            Translating plenary debates into published policy whitepapers, shadow cabinet audits, and community civic projects.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="donate.html" class="hover:text-flp-gold transition-colors">Donate Us</a>
+          <a href="contact.html" class="hover:text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

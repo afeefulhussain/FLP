@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Member Registration | Future Leaders Parliament</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flp: {
+              green: '#022F18',
+              gold: '#D2A23C',
+              white: '#FFFFFF',
+              'green-dark': '#011c0e',
+              'green-card': '#033b1e',
+              'gold-muted': 'rgba(210, 162, 60, 0.2)',
+              'gold-border': 'rgba(210, 162, 60, 0.35)'
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      caret-color: transparent;
+    }
+    input, textarea, [contenteditable="true"] {
+      caret-color: auto;
+    }
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+    .gold-accent-line {
+      width: 64px;
+      height: 3px;
+      background-color: #D2A23C;
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="contact.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA & Donate Button in Header -->
+      <div class="flex items-center gap-3">
+        <a href="donate.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Donate Us
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="donate.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Donate Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="donate.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Donate Us
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header Hero Banner -->
+  <section class="relative pt-36 pb-20 bg-grid-pattern border-b border-flp-gold-muted overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      
+      <!-- Clean Typography Tagline -->
+      <span class="font-heading font-bold text-xs sm:text-sm tracking-widest text-flp-gold uppercase block mb-4">
+        Voice of the Next Generation
+      </span>
+
+      <h1 class="font-heading font-black text-4xl sm:text-6xl uppercase tracking-tight text-flp-white mb-4">
+        Connect & <span class="text-flp-gold">Register</span>
+      </h1>
+      <p class="text-base sm:text-xl text-flp-white/80 max-w-2xl mx-auto leading-relaxed mb-8">
+        Register to join as an official member, connect directly with the Secretariat desk, or collaborate on youth leadership programs.
+      </p>
+
+      <!-- Prominent Join as a Member Google Form Button -->
+      <div class="inline-block">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzD4JSLBuwiSIeSgi-2XOvrooYaSl_DpliA5kBN1C-Z2SY1w/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 bg-flp-gold text-flp-green font-heading font-black text-sm sm:text-base tracking-widest uppercase rounded-sm hover:bg-transparent hover:text-flp-gold border-2 border-flp-gold transition-all duration-300 shadow-2xl hover:scale-105">
+          <span>Join as a Member (Google Form)</span>
+          <span class="text-xl">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section: Centered Secretariat Reachout Channels -->
+  <section class="py-24 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center mb-14">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Direct Reachout</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-flp-white uppercase tracking-tight mb-4">Secretariat Channels</h2>
+        <div class="gold-accent-line mx-auto mb-6"></div>
+        <p class="text-sm text-flp-white/80 max-w-2xl mx-auto leading-relaxed">
+          Our Secretariat desk is active daily to assist you with member registrations, institutional partnerships, and shadow cabinet inquiries.
+        </p>
+      </div>
+
+      <!-- Direct Connect Cards Grid -->
+      <div class="space-y-5">
+        
+        <!-- Gmail Card -->
+        <a href="mailto:futureleadersparliament@gmail.com" class="group flex items-center justify-between p-6 sm:p-7 bg-flp-green border border-flp-gold-border rounded-sm hover:border-flp-gold hover:bg-flp-green-card transition-all duration-200 shadow-md">
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-sm bg-flp-green-dark border border-flp-gold-muted flex items-center justify-center text-flp-gold group-hover:border-flp-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xs uppercase tracking-wider text-flp-gold block mb-1">Official Secretariat Email</span>
+              <span class="text-base font-medium text-flp-white break-all">futureleadersparliament@gmail.com</span>
+              <span class="text-xs text-flp-white/60 block mt-0.5">For official correspondences, institutional memorandums, and press releases</span>
+            </div>
+          </div>
+          <span class="text-flp-gold text-lg group-hover:translate-x-1.5 transition-transform">→</span>
+        </a>
+
+        <!-- WhatsApp Desk Single Verified Number -->
+        <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-6 sm:p-7 bg-flp-green border border-flp-gold-border rounded-sm hover:border-flp-gold hover:bg-flp-green-card transition-all duration-200 shadow-md">
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-sm bg-flp-green-dark border border-flp-gold-muted flex items-center justify-center text-flp-gold group-hover:border-flp-gold transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.031 2c-5.514 0-10 4.486-10 10 0 1.761.458 3.479 1.328 5.006L2 22l5.133-1.346C8.625 21.503 10.298 22 12.031 22c5.514 0 10-4.486 10-10s-4.486-10-10-10zm0 18.2c-1.523 0-3.013-.409-4.309-1.182l-.309-.185-3.203.84.854-3.123-.203-.323c-.846-1.345-1.293-2.909-1.293-4.527 0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xs uppercase tracking-wider text-flp-gold block mb-1">WhatsApp Official Desk</span>
+              <span class="text-base font-medium text-flp-white">+92 309 7951212</span>
+              <span class="text-xs text-flp-white/60 block mt-0.5">Click to chat directly with pre-filled inquiry greeting</span>
+            </div>
+          </div>
+          <span class="text-flp-gold text-lg group-hover:translate-x-1.5 transition-transform">→</span>
+        </a>
+
+        <!-- Instagram Card -->
+        <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-6 sm:p-7 bg-flp-green border border-flp-gold-border rounded-sm hover:border-flp-gold hover:bg-flp-green-card transition-all duration-200 shadow-md">
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-sm bg-flp-green-dark border border-flp-gold-muted flex items-center justify-center text-flp-gold group-hover:border-flp-gold transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.8"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke-width="1.8"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line>
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xs uppercase tracking-wider text-flp-gold block mb-1">Instagram Dispatch</span>
+              <span class="text-base font-medium text-flp-white">@futureleadersparliament</span>
+              <span class="text-xs text-flp-white/60 block mt-0.5">Live session stories, event photo galleries, and youth highlights</span>
+            </div>
+          </div>
+          <span class="text-flp-gold text-lg group-hover:translate-x-1.5 transition-transform">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center mb-14">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Clear Answers</span>
+        <h2 class="font-heading font-extrabold text-3xl text-flp-white uppercase tracking-tight mb-4">Frequently Asked Questions</h2>
+        <div class="gold-accent-line mx-auto"></div>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="bg-flp-green-dark border border-flp-gold-border p-6 rounded-sm">
+          <h4 class="font-heading font-bold text-sm text-flp-gold uppercase mb-2">How do I join as a member?</h4>
+          <p class="text-xs text-flp-white/80 leading-relaxed">
+            Click the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzD4JSLBuwiSIeSgi-2XOvrooYaSl_DpliA5kBN1C-Z2SY1w/viewform" target="_blank" rel="noopener noreferrer" class="text-flp-gold underline font-bold">Join as a Member Button</a> above to access our official Google Form and submit your application.
+          </p>
+        </div>
+
+        <div class="bg-flp-green-dark border border-flp-gold-border p-6 rounded-sm">
+          <h4 class="font-heading font-bold text-sm text-flp-gold uppercase mb-2">Who is eligible to participate in FLP?</h4>
+          <p class="text-xs text-flp-white/80 leading-relaxed">
+            High school, college, and university students across Pakistan aged 14 to 28 who have an interest in leadership, public policy, governance, and civic affairs.
+          </p>
+        </div>
+
+        <div class="bg-flp-green-dark border border-flp-gold-border p-6 rounded-sm">
+          <h4 class="font-heading font-bold text-sm text-flp-gold uppercase mb-2">How can our school or institution register a delegation?</h4>
+          <p class="text-xs text-flp-white/80 leading-relaxed">
+            Institutional heads or faculty advisors can contact our Secretariat directly via Email or WhatsApp at +92 309 7951212 for institutional delegation packages.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="donate.html" class="hover:text-flp-gold transition-colors">Donate Us</a>
+          <a href="contact.html" class="text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

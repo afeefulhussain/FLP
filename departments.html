@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Departments & Initiatives | Future Leaders Parliament</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flp: {
+              green: '#022F18',
+              gold: '#D2A23C',
+              white: '#FFFFFF',
+              'green-dark': '#011c0e',
+              'green-card': '#033b1e',
+              'gold-muted': 'rgba(210, 162, 60, 0.2)',
+              'gold-border': 'rgba(210, 162, 60, 0.35)'
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      caret-color: transparent;
+    }
+    input, textarea, [contenteditable="true"] {
+      caret-color: auto;
+    }
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+    .gold-accent-line {
+      width: 64px;
+      height: 3px;
+      background-color: #D2A23C;
+    }
+    .dept-card {
+      transition: all 0.25s ease-in-out;
+    }
+    .dept-card:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA & Donate Button in Header -->
+      <div class="flex items-center gap-3">
+        <a href="donate.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Donate Us
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="donate.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Donate Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="donate.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Donate Us
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header Hero Banner -->
+  <section class="relative pt-36 pb-20 bg-grid-pattern border-b border-flp-gold-muted overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <!-- Clean Typography Tagline -->
+      <span class="font-heading font-bold text-xs sm:text-sm tracking-widest text-flp-gold uppercase block mb-4">
+        Voice of the Next Generation
+      </span>
+
+      <h1 class="font-heading font-black text-4xl sm:text-6xl uppercase tracking-tight text-flp-white mb-4">
+        Departments & <span class="text-flp-gold">Programmes</span>
+      </h1>
+      <p class="text-base sm:text-xl text-flp-white/80 max-w-3xl leading-relaxed">
+        Explore all 22 Provincial Shadow Cabinet ministerial portfolios, flagship assemblies, youth roundtables, civic boot camps, and policy whitepapers.
+      </p>
+
+      <!-- Sub-navigation anchor pills -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#cabinet-portfolios" class="px-4 py-2 bg-flp-green-dark border border-flp-gold text-flp-gold text-xs font-heading font-semibold uppercase tracking-wider rounded-sm hover:bg-flp-gold hover:text-flp-green transition-colors">
+          ↓ 22 Shadow Cabinet Portfolios
+        </a>
+        <a href="#initiatives" class="px-4 py-2 bg-flp-green-dark border border-flp-gold-muted text-flp-white/80 text-xs font-heading font-semibold uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold transition-colors">
+          ↓ Flagship Initiatives & Plenaries
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: 22 Provincial Shadow Cabinet Portfolios -->
+  <section id="cabinet-portfolios" class="py-24 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Governance Framework</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-flp-white uppercase tracking-tight">22 Ministerial Portfolios</h2>
+          <div class="gold-accent-line mt-4"></div>
+        </div>
+        <p class="text-xs sm:text-sm text-flp-white/70 max-w-lg leading-relaxed">
+          Shadow ministers conduct quarterly performance audits, lead legislative inquiries, debate official government policy, and compile alternative whitepapers.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mb-12 border-b border-flp-gold-muted/40 pb-4" id="category-filters">
+        <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm border border-flp-gold transition-all">All Departments (22)</button>
+        <button onclick="filterCategory('governance')" class="cat-btn px-4 py-2 bg-flp-green text-flp-white/80 font-heading font-semibold text-xs uppercase tracking-wider rounded-sm border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">Governance & Law</button>
+        <button onclick="filterCategory('economy')" class="cat-btn px-4 py-2 bg-flp-green text-flp-white/80 font-heading font-semibold text-xs uppercase tracking-wider rounded-sm border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">Economy & Tech</button>
+        <button onclick="filterCategory('social')" class="cat-btn px-4 py-2 bg-flp-green text-flp-white/80 font-heading font-semibold text-xs uppercase tracking-wider rounded-sm border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">Social & Human Rights</button>
+        <button onclick="filterCategory('culture')" class="cat-btn px-4 py-2 bg-flp-green text-flp-white/80 font-heading font-semibold text-xs uppercase tracking-wider rounded-sm border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">Culture, Youth & Environment</button>
+      </div>
+
+      <!-- 22 Department Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="departments-grid">
+        
+        <!-- 01. Information -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="governance">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #01</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Governance</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Information</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Overseeing official communication standards, media policies, public transparency, press freedoms, and democratic awareness campaigns.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Media Policy</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Public Awareness</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Transparency</span>
+          </div>
+        </div>
+
+        <!-- 02. Planning & Development -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="economy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #02</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Economy</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Planning & Development</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Formulating macro-development frameworks, public sector investment programs (PSIP), sustainable urban masterplans, and infrastructure priorities.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Strategic Planning</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Sustainable Growth</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Infrastructure</span>
+          </div>
+        </div>
+
+        <!-- 03. Finance, Industries & Economic Affairs -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="economy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #03</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Economy</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Finance, Industries & Economic Affairs</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Authoring shadow provincial budgets, fiscal policy reviews, industrialization initiatives, tax reforms, and economic stimulus strategies.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Shadow Budget</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Fiscal Policy</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Industrialization</span>
+          </div>
+        </div>
+
+        <!-- 04. Climate Change -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="culture">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #04</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Environment</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Climate Change</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Advocating ecological resilience, renewable energy transitions, water conservation, pollution control, and climate justice for vulnerable communities.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Ecological Action</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Clean Energy</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Resilience</span>
+          </div>
+        </div>
+
+        <!-- 05. Information Technology -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="economy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #05</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Tech</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Information Technology</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Promoting e-governance solutions, digital economy infrastructure, youth freelancing ecosystems, cyber security, and AI literacy.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Digital Governance</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">AI Literacy</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Tech Ecosystem</span>
+          </div>
+        </div>
+
+        <!-- 06. Education -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="social">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #06</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Social</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Education</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Championing curriculum modernization, out-of-school children enrollment, vocational technical training, and universal literacy benchmarks.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Curriculum Reform</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Literacy</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Higher Education</span>
+          </div>
+        </div>
+
+        <!-- 07. Health -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="social">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #07</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Social</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Health</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Formulating policies for public hospital efficiency, universal health coverage, emergency medicine, preventive healthcare, and mental health.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Public Health</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Healthcare Access</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Mental Wellbeing</span>
+          </div>
+        </div>
+
+        <!-- 08. Law & Parliamentary Affairs -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="governance">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #08</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Governance</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Law & Parliamentary Affairs</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Drafting model legislative bills, analyzing constitutional jurisprudence, judicial reform proposals, and parliamentary procedural protocols.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Bill Drafting</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Constitutional Law</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Legal Reforms</span>
+          </div>
+        </div>
+
+        <!-- 09. Human Rights -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="social">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #09</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Social</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Human Rights</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Defending fundamental civil liberties, minority safeguards, child welfare laws, labor rights, and legal aid frameworks.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Civil Liberties</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Minority Rights</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Equal Protection</span>
+          </div>
+        </div>
+
+        <!-- 10. Interior -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="governance">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #10</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Governance</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Interior</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Focusing on internal security paradigms, modern community policing reforms, civil defense protocols, and emergency service readiness.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Public Safety</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Police Reforms</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Civil Defense</span>
+          </div>
+        </div>
+
+        <!-- 11. Local Government -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="governance">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #11</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Governance</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Local Government</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Advocating grassroots power devolution, fiscal decentralization, municipal service excellence, and smart city administration.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Devolution</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Municipal Services</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Urban Planning</span>
+          </div>
+        </div>
+
+        <!-- 12. Sports -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="culture">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #12</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Youth</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Sports</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Developing grassroots athletics infrastructure, school sports leagues, national athletic talent pipelines, and sports diplomacy.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Athletics</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Youth Games</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Infrastructure</span>
+          </div>
+        </div>
+
+        <!-- 13. Youth Affairs -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="culture">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #13</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Youth</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Youth Affairs</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Formulating national youth policies, youth development index tracking, civic engagement incentives, and leadership fellowships.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Youth Policy</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Civic Action</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Leadership</span>
+          </div>
+        </div>
+
+        <!-- 14. Tourism -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="culture">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #14</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Culture</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Tourism</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Promoting sustainable eco-tourism, cultural heritage tourism, hospitality industry workforce standards, and international destination marketing.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Eco-Tourism</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Heritage Sites</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Hospitality</span>
+          </div>
+        </div>
+
+        <!-- 15. Culture -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="culture">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #15</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Culture</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Culture</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Preserving historical heritage, indigenous arts, regional languages, literary institutions, and promoting national cultural diplomacy.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Arts & Heritage</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Literature</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Cultural Diplomacy</span>
+          </div>
+        </div>
+
+        <!-- 16. Religious Affairs & Interfaith Harmony -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="social">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #16</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Social</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Religious Affairs & Interfaith Harmony</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Fostering interfaith bridge-building, religious minority protection councils, pilgrimage site administration, and sectarian reconciliation.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Interfaith Peace</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Harmony Councils</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Minority Sites</span>
+          </div>
+        </div>
+
+        <!-- 17. Agriculture -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="economy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #17</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Economy</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Agriculture</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Targeting food security, farmer subsidy efficiency, smart agri-tech modernization, crop yield optimization, and rural agrarian welfare.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Food Security</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Agri-Tech</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Small Farmers</span>
+          </div>
+        </div>
+
+        <!-- 18. Transport -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="economy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #18</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Economy</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Transport</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Reviewing mass transit systems, provincial highway networks, vehicle emission standards, and green public transportation expansion.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Mass Transit</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Road Safety</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Green Mobility</span>
+          </div>
+        </div>
+
+        <!-- 19. Women Development -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="social">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #19</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Social</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Women Development</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Advancing female economic participation, equal workplace opportunity, maternal safety, legal protections against violence, and leadership mentorship.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Women Empowerment</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Equal Opportunity</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Legal Safety</span>
+          </div>
+        </div>
+
+        <!-- 20. Social Services -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="social">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #20</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Social</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Social Services</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Strengthening targeted social safety nets, disability rights legislation, orphan support, elderly welfare, and poverty alleviation programs.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Safety Nets</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Disability Rights</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Welfare Reform</span>
+          </div>
+        </div>
+
+        <!-- 21. Political Affairs -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="governance">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #21</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Governance</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Political Affairs</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Analyzing constitutional dynamics, electoral transparency reforms, multi-party dialogue facilitation, and youth political participation.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Electoral Reform</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Consensus Building</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Democratic Dialogue</span>
+          </div>
+        </div>
+
+        <!-- 22. Entrepreneurship -->
+        <div class="dept-card bg-flp-green p-7 border border-flp-gold-border rounded-sm flex flex-col justify-between" data-cat="economy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold text-flp-gold">PORTFOLIO #22</span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-sm bg-flp-gold/10 text-flp-gold border border-flp-gold/30">Economy</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-flp-white uppercase tracking-tight mb-2">Entrepreneurship</h3>
+            <p class="text-xs text-flp-white/75 leading-relaxed mb-4">
+              Championing startup ease of doing business, venture capital access, student micro-grants, intellectual property protections, and youth-led enterprises.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-flp-gold-muted/40 flex flex-wrap gap-1.5 text-[11px] text-flp-white/60">
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Startups & Grants</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Business Ease</span>
+            <span class="bg-flp-green-dark px-2 py-0.5 rounded-sm border border-flp-gold-muted/30">Youth Ventures</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Flagship Initiatives & Programmes (Merged Cleanly into Departments) -->
+  <section id="initiatives" class="py-24 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Institutional Programmes</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-flp-white uppercase tracking-tight mb-4">Flagship Initiatives</h2>
+        <div class="gold-accent-line mx-auto mb-6"></div>
+        <p class="text-sm text-flp-white/80 leading-relaxed">
+          From simulation plenaries to regional roundtables and empirical policy authoring, FLP organizes high-impact platforms for emerging youth leaders.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Programme 1: Parliamentary Plenary Assemblies -->
+        <div class="bg-flp-green-dark p-8 sm:p-10 border border-flp-gold-border rounded-sm shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-flp-gold">INITIATIVE #01</span>
+            <span class="px-2.5 py-1 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm bg-flp-gold/15 text-flp-gold border border-flp-gold/40">Simulation</span>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-flp-white uppercase tracking-tight mb-3">Parliamentary Plenary Assemblies</h3>
+          <p class="text-xs sm:text-sm text-flp-white/75 leading-relaxed mb-6">
+            Multi-day simulation sessions replicating the National and Provincial Assemblies of Pakistan. Delegates serve as Members of Parliament, debate pending bills, and negotiate legislative resolutions under strict parliamentary rules of order.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-flp-white/60 font-mono">
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">Quarterly Cycles</span>
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">300+ Delegates</span>
+          </div>
+        </div>
+
+        <!-- Programme 2: Regional Youth Forums -->
+        <div class="bg-flp-green-dark p-8 sm:p-10 border border-flp-gold-border rounded-sm shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-flp-gold">INITIATIVE #02</span>
+            <span class="px-2.5 py-1 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm bg-flp-gold/15 text-flp-gold border border-flp-gold/40">Grassroots</span>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-flp-white uppercase tracking-tight mb-3">Regional Youth Forums & Roundtables</h3>
+          <p class="text-xs sm:text-sm text-flp-white/75 leading-relaxed mb-6">
+            District-level consultations and divisional town halls bringing together student leaders, civic advocates, and local administrators to discuss regional socio-economic challenges.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-flp-white/60 font-mono">
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">All Divisions</span>
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">Town Hall Format</span>
+          </div>
+        </div>
+
+        <!-- Programme 3: Civic & Diplomatic Boot Camps -->
+        <div class="bg-flp-green-dark p-8 sm:p-10 border border-flp-gold-border rounded-sm shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-flp-gold">INITIATIVE #03</span>
+            <span class="px-2.5 py-1 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm bg-flp-gold/15 text-flp-gold border border-flp-gold/40">Training</span>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-flp-white uppercase tracking-tight mb-3">Civic & Diplomatic Boot Camps</h3>
+          <p class="text-xs sm:text-sm text-flp-white/75 leading-relaxed mb-6">
+            Intensive masterclasses led by seasoned legislators, constitutional lawyers, and foreign service diplomats covering bilateral treaty negotiations, speechwriting, and parliamentary rules.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-flp-white/60 font-mono">
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">Masterclass Format</span>
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">Certified Badges</span>
+          </div>
+        </div>
+
+        <!-- Programme 4: National Youth Whitepapers -->
+        <div class="bg-flp-green-dark p-8 sm:p-10 border border-flp-gold-border rounded-sm shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-flp-gold">INITIATIVE #04</span>
+            <span class="px-2.5 py-1 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm bg-flp-gold/15 text-flp-gold border border-flp-gold/40">Research</span>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-flp-white uppercase tracking-tight mb-3">Youth Policy Whitepapers & Audits</h3>
+          <p class="text-xs sm:text-sm text-flp-white/75 leading-relaxed mb-6">
+            Empirical policy dossiers authored by shadow cabinet ministers and research fellows, addressing real-world governance dilemmas submitted directly to parliamentary standing committees.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-flp-white/60 font-mono">
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">Annual Volumes</span>
+            <span class="bg-flp-green px-3 py-1 rounded-sm border border-flp-gold-muted">Policy Audits</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="donate.html" class="hover:text-flp-gold transition-colors">Donate Us</a>
+          <a href="contact.html" class="hover:text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Category Filtering & Mobile Menu Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+
+    function filterCategory(cat) {
+      const cards = document.querySelectorAll('.dept-card');
+      const buttons = document.querySelectorAll('.cat-btn');
+
+      // Update button active state
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-flp-gold', 'text-flp-green', 'border-flp-gold');
+        btn.classList.add('bg-flp-green', 'text-flp-white/80', 'border-flp-gold-muted');
+      });
+
+      const activeBtn = event ? event.target : null;
+      if (activeBtn) {
+        activeBtn.classList.add('bg-flp-gold', 'text-flp-green', 'border-flp-gold');
+        activeBtn.classList.remove('bg-flp-green', 'text-flp-white/80', 'border-flp-gold-muted');
+      }
+
+      // Filter cards
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
