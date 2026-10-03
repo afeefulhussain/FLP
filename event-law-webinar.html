@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Law Webinar: Constitutional Governance & Youth Legal Literacy (Speaker: Adv. Nisa Ara) | FLP</title>
+  <meta name="description" content="Comprehensive overview of the FLP Law Department webinar on Constitutional Governance, Rule of Law & Youth Legal Literacy featuring distinguished guest speaker Advocate Nisa Ara." />
+  
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'flp-green': '#022F18',
+            'flp-green-dark': '#011c0e',
+            'flp-green-light': '#044d28',
+            'flp-gold': '#D2A23C',
+            'flp-gold-light': '#e4bd5f',
+            'flp-gold-muted': 'rgba(210, 162, 60, 0.2)',
+            'flp-gold-border': 'rgba(210, 162, 60, 0.4)',
+            'flp-white': '#FFFFFF',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+    .gold-accent-line {
+      width: 64px;
+      height: 3px;
+      background-color: #D2A23C;
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="events.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">Events</a>
+        <a href="join.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Join Us</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA in Header -->
+      <div class="flex items-center gap-3">
+        <a href="join.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Become a Member
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="events.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">Events</a>
+      <a href="join.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Join Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="join.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Become a Member
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <section class="pt-28 pb-4 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-2 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/60">
+        <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+        <span>/</span>
+        <a href="events.html" class="hover:text-flp-gold transition-colors">Events Directory</a>
+        <span>/</span>
+        <span class="text-flp-gold">Law Department Webinar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Banner -->
+  <section class="relative py-16 bg-grid-pattern border-b border-flp-gold-muted overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <div class="max-w-4xl">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="px-3 py-1 bg-flp-gold text-flp-green text-xs font-heading font-bold uppercase tracking-wider rounded-sm">
+            Law & Parliamentary Affairs
+          </span>
+          <span class="px-3 py-1 bg-flp-green-dark text-flp-white/90 border border-flp-gold-border text-xs font-heading font-semibold uppercase tracking-wider rounded-sm">
+            Webinar Series
+          </span>
+          <span class="px-3 py-1 bg-green-900/60 text-green-300 border border-green-500/30 text-xs font-heading font-semibold uppercase tracking-wider rounded-sm">
+            Session Concluded • Verified E-Certificates Issued
+          </span>
+        </div>
+
+        <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-flp-white leading-tight mb-6">
+          Constitutional Governance, Rule of Law & <span class="text-flp-gold">Youth Legal Literacy</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-flp-white/80 leading-relaxed max-w-3xl">
+          An authoritative masterclass dissecting the constitutional architecture of Pakistan, safeguarding fundamental civil liberties, legislative drafting mechanics, and empowering young scholars to actively uphold the rule of law.
+        </p>
+
+        <!-- Meta Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-flp-gold-muted/60">
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Keynote Speaker</div>
+            <div class="text-sm font-bold text-flp-white mt-0.5">Advocate Nisa Ara</div>
+          </div>
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Host Department</div>
+            <div class="text-sm font-bold text-flp-white mt-0.5">Law & Legal Affairs</div>
+          </div>
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Attendance</div>
+            <div class="text-sm font-bold text-flp-white mt-0.5">250+ Youth Delegates</div>
+          </div>
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Session Mode</div>
+            <div class="text-sm font-bold text-flp-white mt-0.5">Zoom Live Assembly</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <section class="py-16 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left 8 Columns: Main Detailed Narrative & Modules -->
+        <div class="lg:col-span-8 space-y-12">
+          
+          <!-- Keynote Speaker Card Spotlight -->
+          <div class="bg-flp-green border-2 border-flp-gold rounded-sm p-8 shadow-xl relative overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-flp-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="flex flex-col sm:flex-row items-start gap-6">
+              <!-- Stylized Speaker Monogram Badge -->
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-sm bg-gradient-to-br from-flp-gold to-yellow-600 border-2 border-flp-gold flex flex-col items-center justify-center text-flp-green font-heading font-black text-3xl shadow-lg flex-shrink-0">
+                <span>NA</span>
+                <span class="text-[9px] font-heading font-bold uppercase tracking-widest text-flp-green mt-1">Speaker</span>
+              </div>
+
+              <div class="space-y-3">
+                <div>
+                  <span class="px-2.5 py-0.5 bg-flp-gold/20 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-widest rounded-sm">
+                    Distinguished Guest Keynote
+                  </span>
+                  <h2 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight mt-1">
+                    Advocate Nisa Ara
+                  </h2>
+                  <p class="text-xs font-heading font-semibold text-flp-gold uppercase tracking-wider">
+                    Senior Legal Practitioner • Constitutional & Human Rights Jurist • Youth Legal Mentor
+                  </p>
+                </div>
+
+                <p class="text-sm text-flp-white/80 leading-relaxed">
+                  Advocate Nisa Ara is a highly respected legal scholar and litigator with extensive experience in constitutional law, public interest litigation, and parliamentary rights advocacy. Her address provided youth delegates with an indispensable framework for understanding legal remedies, citizen duties, and constitutional accountability.
+                </p>
+
+                <!-- Speaker Quote -->
+                <div class="bg-flp-green-dark border-l-4 border-flp-gold p-4 text-xs text-flp-white/90 italic rounded-r-sm">
+                  "Constitutional literacy is the bedrock of democratic accountability. When youth understand the law, they transform from passive observers into active custodians of justice."
+                  <div class="text-[11px] text-flp-gold font-bold not-italic mt-1 uppercase tracking-wider">— Adv. Nisa Ara, FLP Law Masterclass</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 1: Detailed Event Background & Objectives -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">01. Overview</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              About The Session
+            </h3>
+            <div class="space-y-4 text-sm text-flp-white/80 leading-relaxed">
+              <p>
+                The Department of Law & Parliamentary Affairs organized this dedicated national webinar to bridge the gap between academic legal knowledge and actionable parliamentary literacy for youth leaders across Pakistan.
+              </p>
+              <p>
+                During the two-hour intensive digital convention, delegates from over 35 universities engaged in live deliberations regarding constitutional safeguards, the hierarchy of courts, procedural lawmaking in the Senate and National Assembly, and how youth can draft actionable policy briefs that align with national statutes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 2: Session Modules & Agenda Breakdown -->
+          <div id="modules" class="space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">02. Agenda Breakdown</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Session Modules & Discussions
+            </h3>
+
+            <div class="space-y-4">
+              <!-- Module 1 -->
+              <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-5 space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider">Module 1 • 30 Mins</span>
+                  <span class="px-2 py-0.5 bg-flp-green-dark text-flp-white/70 text-[10px] font-heading font-semibold uppercase rounded-sm">Constitutional Core</span>
+                </div>
+                <h4 class="text-base font-heading font-bold text-flp-white">
+                  Fundamental Rights under the 1973 Constitution (Articles 8–28)
+                </h4>
+                <p class="text-xs text-flp-white/75 leading-relaxed">
+                  Detailed analysis of fundamental civil liberties including Article 9 (Security of Person), Article 10-A (Right to Fair Trial), Article 19 (Freedom of Speech), and Article 19-A (Right to Information), highlighting judicial enforcement mechanisms under Article 199 and Article 184(3).
+                </p>
+              </div>
+
+              <!-- Module 2 -->
+              <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-5 space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider">Module 2 • 35 Mins</span>
+                  <span class="px-2 py-0.5 bg-flp-green-dark text-flp-white/70 text-[10px] font-heading font-semibold uppercase rounded-sm">Keynote Address</span>
+                </div>
+                <h4 class="text-base font-heading font-bold text-flp-white">
+                  Keynote Address by Advocate Nisa Ara: Bridging Youth & The Legal Realm
+                </h4>
+                <p class="text-xs text-flp-white/75 leading-relaxed">
+                  Advocate Nisa Ara elaborated on practical case studies of constitutional supremacy, how future policymakers must evaluate proposed bills against constitutional thresholds, and career avenues for young lawyers in legislative counsel.
+                </p>
+              </div>
+
+              <!-- Module 3 -->
+              <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-5 space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider">Module 3 • 30 Mins</span>
+                  <span class="px-2 py-0.5 bg-flp-green-dark text-flp-white/70 text-[10px] font-heading font-semibold uppercase rounded-sm">Interactive Floor</span>
+                </div>
+                <h4 class="text-base font-heading font-bold text-flp-white">
+                  Interactive Delegate Q&A & Hypothetical Legal Scenarios
+                </h4>
+                <p class="text-xs text-flp-white/75 leading-relaxed">
+                  Open-floor questions from law students regarding judicial review, balancing national security with privacy rights, digital freedom laws, and procedures for drafting public interest litigation petitions.
+                </p>
+              </div>
+
+              <!-- Module 4 -->
+              <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-5 space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider">Module 4 • 25 Mins</span>
+                  <span class="px-2 py-0.5 bg-flp-green-dark text-flp-white/70 text-[10px] font-heading font-semibold uppercase rounded-sm">Resolutions</span>
+                </div>
+                <h4 class="text-base font-heading font-bold text-flp-white">
+                  Adoption of the FLP Youth Legal Literacy Resolution
+                </h4>
+                <p class="text-xs text-flp-white/75 leading-relaxed">
+                  Formal adoption of a 5-point youth legal manifesto committing FLP shadow cabinet delegates to promote civic constitutional clinics across regional colleges and schools.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Key Takeaways & Impact -->
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">03. Key Takeaways</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Actionable Takeaways for Delegates
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-flp-green border border-flp-gold-border rounded-sm p-5">
+                <div class="w-8 h-8 rounded-sm bg-flp-gold/20 text-flp-gold flex items-center justify-center font-heading font-bold text-sm mb-3">1</div>
+                <h5 class="text-sm font-heading font-bold text-flp-white uppercase mb-1">Constitutional Literacy</h5>
+                <p class="text-xs text-flp-white/75 leading-relaxed">Mastery of citizen rights under Chapter 1 of the Constitution and knowing how to assert them without fear.</p>
+              </div>
+
+              <div class="bg-flp-green border border-flp-gold-border rounded-sm p-5">
+                <div class="w-8 h-8 rounded-sm bg-flp-gold/20 text-flp-gold flex items-center justify-center font-heading font-bold text-sm mb-3">2</div>
+                <h5 class="text-sm font-heading font-bold text-flp-white uppercase mb-1">Legislative Scrutiny</h5>
+                <p class="text-xs text-flp-white/75 leading-relaxed">Evaluating private bills for constitutional compliance, proportionality, and non-discrimination.</p>
+              </div>
+
+              <div class="bg-flp-green border border-flp-gold-border rounded-sm p-5">
+                <div class="w-8 h-8 rounded-sm bg-flp-gold/20 text-flp-gold flex items-center justify-center font-heading font-bold text-sm mb-3">3</div>
+                <h5 class="text-sm font-heading font-bold text-flp-white uppercase mb-1">Right to Information</h5>
+                <p class="text-xs text-flp-white/75 leading-relaxed">Utilizing Article 19-A RTI requests to demand institutional transparency and public record disclosures.</p>
+              </div>
+
+              <div class="bg-flp-green border border-flp-gold-border rounded-sm p-5">
+                <div class="w-8 h-8 rounded-sm bg-flp-gold/20 text-flp-gold flex items-center justify-center font-heading font-bold text-sm mb-3">4</div>
+                <h5 class="text-sm font-heading font-bold text-flp-white uppercase mb-1">Shadow Cabinet Briefs</h5>
+                <p class="text-xs text-flp-white/75 leading-relaxed">Writing formal legal advisories and dissenting opinions on upcoming federal and provincial legislation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Participant Feedback -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">04. Testimonials</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              What Attendees Said
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-flp-green border border-flp-gold-muted p-5 rounded-sm">
+                <p class="text-xs text-flp-white/80 italic mb-3">"Advocate Nisa Ara's explanation of Article 10-A and procedural fairness was eye-opening. This is the exact practical knowledge law students need."</p>
+                <div class="text-[11px] font-heading font-bold text-flp-gold uppercase">— Hamza Tariq, Law Delegate</div>
+              </div>
+              <div class="bg-flp-green border border-flp-gold-muted p-5 rounded-sm">
+                <p class="text-xs text-flp-white/80 italic mb-3">"The Q&A session felt like a real parliamentary committee hearing. Proud to be part of the FLP Law Department."</p>
+                <div class="text-[11px] font-heading font-bold text-flp-gold uppercase">— Ayesha Siddiqui, Policy Fellow</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 4 Columns: Sticky Action & Meta Sidebar -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- Event Status Card -->
+          <div class="bg-flp-green border border-flp-gold-border rounded-sm p-6 space-y-4">
+            <h4 class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold border-b border-flp-gold-muted/50 pb-2">
+              Session Credentials
+            </h4>
+
+            <div class="space-y-3 text-xs">
+              <div>
+                <span class="text-flp-white/60 block text-[11px] uppercase font-semibold">Organizing Body:</span>
+                <span class="text-flp-white font-bold">FLP Department of Law & Parliamentary Affairs</span>
+              </div>
+              <div>
+                <span class="text-flp-white/60 block text-[11px] uppercase font-semibold">Distinguished Guest:</span>
+                <span class="text-flp-gold font-bold">Advocate Nisa Ara</span>
+              </div>
+              <div>
+                <span class="text-flp-white/60 block text-[11px] uppercase font-semibold">Audience:</span>
+                <span class="text-flp-white font-medium">Youth Delegates, Law Students & Policy Researchers</span>
+              </div>
+              <div>
+                <span class="text-flp-white/60 block text-[11px] uppercase font-semibold">Certificate Status:</span>
+                <span class="text-green-400 font-bold">Verified Certificates Dispatched</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-flp-gold-muted/50 space-y-2">
+              <a href="https://wa.me/923097951212?text=Hi%2C%20I%20attended%20or%20am%20interested%20in%20the%20FLP%20Law%20Department%20Webinar%20with%20Adv.%20Nisa%20Ara." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+                <span>Inquire About Session Brief</span>
+              </a>
+              <a href="join.html" class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-wider rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+                <span>Join FLP Law Department</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Organizing Department Info Box -->
+          <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-6 space-y-3">
+            <h4 class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">
+              About the Law Department
+            </h4>
+            <p class="text-xs text-flp-white/80 leading-relaxed">
+              The FLP Department of Law & Parliamentary Affairs is tasked with shadow legislative scrutiny, bill drafting, constitutional research, and providing legal mentorship to young leaders.
+            </p>
+            <a href="departments.html#law" class="inline-flex items-center gap-1.5 text-xs text-flp-gold font-heading font-semibold uppercase hover:underline">
+              <span>View Department Portfolio →</span>
+            </a>
+          </div>
+
+          <!-- Other Events Navigation -->
+          <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-6 space-y-3">
+            <h4 class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">
+              More FLP Sessions
+            </h4>
+            <div class="space-y-3 text-xs">
+              <a href="event-detail.html?id=parliamentary-simulation" class="block p-3 bg-flp-green-dark border border-flp-gold-muted/50 rounded-sm hover:border-flp-gold transition-colors">
+                <div class="font-bold text-flp-white uppercase">National Youth Parliamentary Simulation</div>
+                <div class="text-[11px] text-flp-gold mt-0.5">Annual Simulation Assembly</div>
+              </a>
+              <a href="event-detail.html?id=diplomacy-summit" class="block p-3 bg-flp-green-dark border border-flp-gold-muted/50 rounded-sm hover:border-flp-gold transition-colors">
+                <div class="font-bold text-flp-white uppercase">Diplomacy & Global Governance Workshop</div>
+                <div class="text-[11px] text-flp-gold mt-0.5">Foreign Affairs Department</div>
+              </a>
+            </div>
+            <a href="events.html" class="block text-center text-xs text-flp-gold font-heading font-semibold uppercase hover:underline pt-2">
+              Browse All Events →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+      <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block">
+        Be A Part of the Next Session
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-heading font-black text-flp-white uppercase tracking-tight">
+        Join Future Leaders Parliament Today
+      </h2>
+      <p class="text-sm sm:text-base text-flp-white/80 max-w-xl mx-auto leading-relaxed">
+        Apply to become an official delegate in the Law & Parliamentary Affairs Department or any of our 22 specialized ministries.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a href="join.html" class="px-8 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+          Apply for Membership
+        </a>
+        <a href="events.html" class="px-8 py-3.5 bg-flp-green-dark text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Back to Events Directory
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green-dark py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="events.html" class="text-flp-gold transition-colors">Events</a>
+          <a href="join.html" class="hover:text-flp-gold transition-colors">Join Us</a>
+          <a href="contact.html" class="hover:text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

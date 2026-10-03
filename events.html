@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Events, Webinars & Summits | Future Leaders Parliament (FLP)</title>
+  <meta name="description" content="Explore official events, constitutional webinars, national parliamentary simulations, and policy roundtables organized by Future Leaders Parliament (FLP)." />
+  
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'flp-green': '#022F18',
+            'flp-green-dark': '#011c0e',
+            'flp-green-light': '#044d28',
+            'flp-gold': '#D2A23C',
+            'flp-gold-light': '#e4bd5f',
+            'flp-gold-muted': 'rgba(210, 162, 60, 0.2)',
+            'flp-gold-border': 'rgba(210, 162, 60, 0.4)',
+            'flp-white': '#FFFFFF',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+    .gold-accent-line {
+      width: 64px;
+      height: 3px;
+      background-color: #D2A23C;
+    }
+    .event-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      border-color: #D2A23C;
+      box-shadow: 0 12px 30px -10px rgba(210, 162, 60, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="events.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">Events</a>
+        <a href="join.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Join Us</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA in Header -->
+      <div class="flex items-center gap-3">
+        <a href="join.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Become a Member
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="events.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">Events</a>
+      <a href="join.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Join Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="join.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Become a Member
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-36 pb-16 bg-grid-pattern border-b border-flp-gold-muted overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      
+      <!-- Clean Typography Tagline -->
+      <span class="font-heading font-bold text-xs sm:text-sm tracking-widest text-flp-gold uppercase block mb-4">
+        Institutional Discourse & Parliamentary Action
+      </span>
+
+      <h1 class="font-heading font-black text-4xl sm:text-6xl uppercase tracking-tight text-flp-white mb-4">
+        Official <span class="text-flp-gold">Events & Sessions</span>
+      </h1>
+      <p class="text-base sm:text-lg text-flp-white/80 max-w-3xl mx-auto leading-relaxed">
+        From authoritative constitutional webinars and legal workshops to national shadow parliamentary simulations and diplomatic roundtables—discover how FLP empowers the youth through structured dialogue and policy leadership.
+      </p>
+
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-10">
+        <div class="bg-flp-green-dark/80 border border-flp-gold-muted p-4 rounded-sm">
+          <div class="text-2xl sm:text-3xl font-heading font-black text-flp-gold">15+</div>
+          <div class="text-[11px] font-heading uppercase tracking-wider text-flp-white/70 mt-1">Conferences & Webinars</div>
+        </div>
+        <div class="bg-flp-green-dark/80 border border-flp-gold-muted p-4 rounded-sm">
+          <div class="text-2xl sm:text-3xl font-heading font-black text-flp-gold">1,200+</div>
+          <div class="text-[11px] font-heading uppercase tracking-wider text-flp-white/70 mt-1">Youth Delegates Reached</div>
+        </div>
+        <div class="bg-flp-green-dark/80 border border-flp-gold-muted p-4 rounded-sm">
+          <div class="text-2xl sm:text-3xl font-heading font-black text-flp-gold">22</div>
+          <div class="text-[11px] font-heading uppercase tracking-wider text-flp-white/70 mt-1">Specialized Portfolios</div>
+        </div>
+        <div class="bg-flp-green-dark/80 border border-flp-gold-muted p-4 rounded-sm">
+          <div class="text-2xl sm:text-3xl font-heading font-black text-flp-gold">100%</div>
+          <div class="text-[11px] font-heading uppercase tracking-wider text-flp-white/70 mt-1">Youth-Led & Non-Partisan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Spotlight Event Section (Law Department Webinar with Advocate Nisa Ara) -->
+  <section class="py-16 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-3 h-3 rounded-full bg-flp-gold animate-pulse"></span>
+        <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">Featured Event Spotlight</span>
+      </div>
+
+      <!-- Spotlight Card -->
+      <div class="relative bg-flp-green border-2 border-flp-gold rounded-sm p-8 sm:p-12 overflow-hidden shadow-2xl">
+        <!-- Background Ambient Glow -->
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-flp-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="lg:col-span-8 space-y-5">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="px-3 py-1 bg-flp-gold text-flp-green text-xs font-heading font-bold uppercase tracking-wider rounded-sm">
+                Law & Parliamentary Affairs
+              </span>
+              <span class="px-3 py-1 bg-flp-green-dark text-flp-white/90 border border-flp-gold-border text-xs font-heading font-semibold uppercase tracking-wider rounded-sm">
+                Webinar Masterclass
+              </span>
+              <span class="px-3 py-1 bg-green-900/60 text-green-300 border border-green-500/30 text-xs font-heading font-semibold uppercase tracking-wider rounded-sm">
+                Completed • Full Insights Available
+              </span>
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-heading font-extrabold uppercase text-flp-white leading-tight">
+              Constitutional Governance, Rule of Law & <span class="text-flp-gold">Youth Legal Literacy</span>
+            </h2>
+
+            <!-- Speaker Feature Box -->
+            <div class="bg-flp-green-dark border border-flp-gold-muted p-5 rounded-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div class="w-14 h-14 rounded-sm bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-flp-gold font-heading font-black text-xl flex-shrink-0">
+                NA
+              </div>
+              <div>
+                <div class="text-[11px] font-heading font-bold uppercase tracking-wider text-flp-gold">Distinguished Keynote Speaker</div>
+                <div class="text-lg font-heading font-bold text-flp-white">Advocate Nisa Ara</div>
+                <p class="text-xs text-flp-white/70 mt-0.5">Senior Legal Practitioner, Constitutional Scholar & Human Rights Jurist</p>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-flp-white/80 leading-relaxed">
+              An exhaustive digital colloquium hosted by the FLP Department of Law & Parliamentary Affairs, dissecting fundamental rights under Articles 8–28 of the Constitution of Pakistan (1973), legislative drafting processes, and empowering youth delegates to interpret and defend constitutional rule of law.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="event-law-webinar.html" class="inline-flex items-center gap-2 px-6 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-lg">
+                <span>View Full Event Details & Insights</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="event-law-webinar.html#modules" class="inline-flex items-center gap-2 px-6 py-3.5 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+                <span>View Session Agenda</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Event Meta Sidebar Card -->
+          <div class="lg:col-span-4 bg-flp-green-dark/90 border border-flp-gold-border rounded-sm p-6 space-y-4">
+            <h3 class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold border-b border-flp-gold-muted/50 pb-2">
+              Quick Facts & Highlights
+            </h3>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex items-start justify-between gap-2">
+                <span class="text-flp-white/60 font-semibold uppercase">Department:</span>
+                <span class="text-flp-white font-medium text-right">Law & Parliamentary Affairs</span>
+              </div>
+              <div class="flex items-start justify-between gap-2">
+                <span class="text-flp-white/60 font-semibold uppercase">Format:</span>
+                <span class="text-flp-white font-medium text-right">Interactive Webinar (Zoom)</span>
+              </div>
+              <div class="flex items-start justify-between gap-2">
+                <span class="text-flp-white/60 font-semibold uppercase">Key Speaker:</span>
+                <span class="text-flp-gold font-bold text-right">Advocate Nisa Ara</span>
+              </div>
+              <div class="flex items-start justify-between gap-2">
+                <span class="text-flp-white/60 font-semibold uppercase">Attendees:</span>
+                <span class="text-flp-white font-medium text-right">250+ Delegates & Students</span>
+              </div>
+              <div class="flex items-start justify-between gap-2">
+                <span class="text-flp-white/60 font-semibold uppercase">Deliverables:</span>
+                <span class="text-flp-white font-medium text-right">Policy Brief & E-Certificates</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-flp-gold-muted/40">
+              <div class="text-[11px] text-flp-white/70 italic">
+                "Constitutional literacy transforms youth from passive observers into active custodians of democratic justice."
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Events Catalog Section -->
+  <section class="py-20 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-flp-gold-muted">
+        <div>
+          <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block mb-1">Explore All Sessions</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black text-flp-white uppercase tracking-tight">
+            Events Directory
+          </h2>
+        </div>
+
+        <!-- Realtime Search Box -->
+        <div class="w-full md:w-80 relative">
+          <input 
+            type="text" 
+            id="event-search" 
+            placeholder="Search events, speakers, dept..." 
+            oninput="filterEvents()"
+            class="w-full bg-flp-green-dark border border-flp-gold-border rounded-sm px-4 py-2.5 pl-10 text-xs font-body text-flp-white placeholder-flp-white/50 focus:outline-none focus:border-flp-gold transition-colors"
+          />
+          <svg class="w-4 h-4 text-flp-gold absolute left-3.5 top-3 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Filter Category Buttons -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-12" id="filter-buttons">
+        <button onclick="setCategory('all', this)" class="category-btn active px-4 py-2 rounded-sm text-xs font-heading font-bold uppercase tracking-wider bg-flp-gold text-flp-green border border-flp-gold transition-all">
+          All Events (<span id="count-all">6</span>)
+        </button>
+        <button onclick="setCategory('law', this)" class="category-btn px-4 py-2 rounded-sm text-xs font-heading font-semibold uppercase tracking-wider bg-flp-green-dark text-flp-white/80 border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">
+          Law & Constitutional
+        </button>
+        <button onclick="setCategory('parliament', this)" class="category-btn px-4 py-2 rounded-sm text-xs font-heading font-semibold uppercase tracking-wider bg-flp-green-dark text-flp-white/80 border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">
+          Parliamentary Simulations
+        </button>
+        <button onclick="setCategory('diplomacy', this)" class="category-btn px-4 py-2 rounded-sm text-xs font-heading font-semibold uppercase tracking-wider bg-flp-green-dark text-flp-white/80 border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">
+          Diplomacy & Foreign Affairs
+        </button>
+        <button onclick="setCategory('policy', this)" class="category-btn px-4 py-2 rounded-sm text-xs font-heading font-semibold uppercase tracking-wider bg-flp-green-dark text-flp-white/80 border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">
+          Policy, Economy & Governance
+        </button>
+      </div>
+
+      <!-- Events Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="events-grid">
+        
+        <!-- CARD 1: Law Webinar (Nisa Ara) -->
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="law" data-keywords="law constitutional nisa ara webinar judicial parliament fundamental rights legal">
+          <div class="p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
+                Law Department
+              </span>
+              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
+                Webinar Series
+              </span>
+            </div>
+
+            <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
+              <a href="event-law-webinar.html">Constitutional Governance & Legal Literacy</a>
+            </h3>
+
+            <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+              <span>Guest: Advocate Nisa Ara</span>
+            </div>
+
+            <p class="text-xs text-flp-white/75 line-clamp-3 leading-relaxed mb-6">
+              A comprehensive legal literacy workshop examining fundamental human rights under the 1973 Constitution of Pakistan, statutory interpretation, and youth legislative drafting.
+            </p>
+
+            <div class="border-t border-flp-gold-muted/40 pt-4 space-y-2 text-[11px] text-flp-white/70">
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">📍</span> <span>Online Digital Session (Zoom)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">👥</span> <span>250+ Registered Delegates</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="event-law-webinar.html" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200">
+              <span>View Full Description & Replay</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: Parliamentary Simulation NYPS 2026 -->
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="parliament" data-keywords="national youth parliamentary simulation nyps shadow cabinet debate bills voting assembly">
+          <div class="p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
+                Secretariat Assembly
+              </span>
+              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
+                Annual Simulation
+              </span>
+            </div>
+
+            <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
+              <a href="event-detail.html?id=parliamentary-simulation">National Youth Parliamentary Simulation (NYPS)</a>
+            </h3>
+
+            <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Shadow Assembly Plenary Debate</span>
+            </div>
+
+            <p class="text-xs text-flp-white/75 line-clamp-3 leading-relaxed mb-6">
+              A flagship 3-day legislative simulation where selected youth parliamentarians table private member bills, conduct committee inquiries, and pass national youth reform acts.
+            </p>
+
+            <div class="border-t border-flp-gold-muted/40 pt-4 space-y-2 text-[11px] text-flp-white/70">
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">📍</span> <span>National Assembly Hall & Hybrid</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">👥</span> <span>300+ Young Parliamentarians</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="event-detail.html?id=parliamentary-simulation" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
+              <span>View Full Description</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 3: Diplomacy & Global Affairs Summit -->
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="diplomacy" data-keywords="diplomacy foreign affairs international relations bilateral treaties un youth summit global">
+          <div class="p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
+                Foreign Affairs
+              </span>
+              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
+                Diplomatic Summit
+              </span>
+            </div>
+
+            <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
+              <a href="event-detail.html?id=diplomacy-summit">Diplomacy & Global Governance Workshop</a>
+            </h3>
+
+            <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>International Relations Committee</span>
+            </div>
+
+            <p class="text-xs text-flp-white/75 line-clamp-3 leading-relaxed mb-6">
+              Training young minds on international diplomacy, bilateral negotiations, geopolitical strategy, and multilateral treaty drafting in an evolving world order.
+            </p>
+
+            <div class="border-t border-flp-gold-muted/40 pt-4 space-y-2 text-[11px] text-flp-white/70">
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">📍</span> <span>Secretariat Chamber / Islamabad</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">👥</span> <span>180+ Future Diplomats</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="event-detail.html?id=diplomacy-summit" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
+              <span>View Full Description</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: Climate Resilience Forum -->
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="climate change environment green energy sustainability legislation policy ecology">
+          <div class="p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
+                Climate Protection
+              </span>
+              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
+                Policy Roundtable
+              </span>
+            </div>
+
+            <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
+              <a href="event-detail.html?id=climate-forum">Climate Action & Sustainable Policy Forum</a>
+            </h3>
+
+            <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Environmental Advisory Board</span>
+            </div>
+
+            <p class="text-xs text-flp-white/75 line-clamp-3 leading-relaxed mb-6">
+              Formulating concrete youth-led legislative proposals for renewable energy transition, flood management governance, and climate loss and damage financing.
+            </p>
+
+            <div class="border-t border-flp-gold-muted/40 pt-4 space-y-2 text-[11px] text-flp-white/70">
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">📍</span> <span>Digital Assembly & Policy Forum</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">👥</span> <span>200+ Researchers & Activists</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="event-detail.html?id=climate-forum" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
+              <span>View Full Description</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 5: Women in Governance Masterclass -->
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="women leadership governance human rights social welfare female parliamentarians masterclass">
+          <div class="p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
+                Human Rights & Social Welfare
+              </span>
+              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
+                Leadership Series
+              </span>
+            </div>
+
+            <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
+              <a href="event-detail.html?id=women-in-governance">Women in Governance & Public Leadership</a>
+            </h3>
+
+            <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              <span>Women Caucus Secretariat</span>
+            </div>
+
+            <p class="text-xs text-flp-white/75 line-clamp-3 leading-relaxed mb-6">
+              Mentorship cohort dedicated to accelerating young women's representation in policy formulation, legislative advocacy, and public administration.
+            </p>
+
+            <div class="border-t border-flp-gold-muted/40 pt-4 space-y-2 text-[11px] text-flp-white/70">
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">📍</span> <span>Executive Briefing Room / Zoom</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">👥</span> <span>160+ Emerging Women Leaders</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="event-detail.html?id=women-in-governance" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
+              <span>View Full Description</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 6: Economic Revival & Digital Economy -->
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="economy finance macroeconomic it technology startups digital youth employment taxation">
+          <div class="p-6 sm:p-7">
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
+                Finance & IT Affairs
+              </span>
+              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
+                Colloquium
+              </span>
+            </div>
+
+            <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
+              <a href="event-detail.html?id=economic-colloquium">National Economic Revival & Youth Enterprise</a>
+            </h3>
+
+            <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              <span>Economic Policy Division</span>
+            </div>
+
+            <p class="text-xs text-flp-white/75 line-clamp-3 leading-relaxed mb-6">
+              Analyzing fiscal policies, freelance digital export strategies, and creating sustainable youth employment frameworks in partnership with industry economists.
+            </p>
+
+            <div class="border-t border-flp-gold-muted/40 pt-4 space-y-2 text-[11px] text-flp-white/70">
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">📍</span> <span>Lahore / Islamabad Hybrid</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-flp-gold">👥</span> <span>220+ Analysts & Students</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="event-detail.html?id=economic-colloquium" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
+              <span>View Full Description</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div id="no-events-msg" class="hidden text-center py-16 bg-flp-green-dark border border-flp-gold-muted rounded-sm mt-8">
+        <p class="text-base font-heading font-bold text-flp-white">No events match your search criteria.</p>
+        <p class="text-xs text-flp-white/70 mt-1">Try searching with a different keyword or reset the category filter.</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm">
+          Reset Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Collaboration & Host with Us Callout -->
+  <section class="py-16 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-5xl mx-auto px-6 text-center space-y-6">
+      <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block">
+        Host or Partner With FLP
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-heading font-extrabold uppercase text-flp-white tracking-tight">
+        Bring an FLP Session to Your University or Institution
+      </h2>
+      <p class="text-sm sm:text-base text-flp-white/80 max-w-2xl mx-auto leading-relaxed">
+        We collaborate with university law societies, political science departments, youth clubs, and policy think tanks across Pakistan to host high-impact workshops, parliamentary debates, and webinars.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a href="contact.html" class="px-7 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+          Propose a Session / Event
+        </a>
+        <a href="https://wa.me/923097951212?text=Hi%2C%20we%20want%20to%20collaborate%20with%20FLP%20to%20host%20an%20event%20or%20webinar." target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          WhatsApp FLP Secretariat
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="events.html" class="text-flp-gold transition-colors">Events</a>
+          <a href="join.html" class="hover:text-flp-gold transition-colors">Join Us</a>
+          <a href="contact.html" class="hover:text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts for Mobile Menu & Realtime Search/Filter -->
+  <script>
+    // Mobile Drawer
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+
+    // Interactive Filtering
+    let currentCategory = 'all';
+
+    function setCategory(category, buttonEl) {
+      currentCategory = category;
+      
+      // Update button styles
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('bg-flp-gold', 'text-flp-green', 'border-flp-gold');
+        btn.classList.add('bg-flp-green-dark', 'text-flp-white/80', 'border-flp-gold-muted');
+      });
+
+      if (buttonEl) {
+        buttonEl.classList.add('bg-flp-gold', 'text-flp-green', 'border-flp-gold');
+        buttonEl.classList.remove('bg-flp-green-dark', 'text-flp-white/80', 'border-flp-gold-muted');
+      }
+
+      filterEvents();
+    }
+
+    function filterEvents() {
+      const searchInput = document.getElementById('event-search');
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.event-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const keywords = card.getAttribute('data-keywords') || '';
+        const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const text = card.textContent.toLowerCase();
+
+        const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
+        const matchesQuery = query === '' || title.includes(query) || keywords.includes(query) || text.includes(query);
+
+        if (matchesCategory && matchesQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const noMsg = document.getElementById('no-events-msg');
+      if (noMsg) {
+        if (visibleCount === 0) {
+          noMsg.classList.remove('hidden');
+        } else {
+          noMsg.classList.add('hidden');
+        }
+      }
+    }
+
+    function resetFilters() {
+      const searchInput = document.getElementById('event-search');
+      if (searchInput) searchInput.value = '';
+      const firstBtn = document.querySelector('.category-btn');
+      if (firstBtn) setCategory('all', firstBtn);
+    }
+  </script>
+</body>
+</html>

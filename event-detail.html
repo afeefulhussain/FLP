@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Event Details | Future Leaders Parliament (FLP)</title>
+  <meta name="description" id="page-desc" content="Detailed overview of official parliamentary sessions, webinars, and policy conferences hosted by Future Leaders Parliament." />
+  
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'flp-green': '#022F18',
+            'flp-green-dark': '#011c0e',
+            'flp-green-light': '#044d28',
+            'flp-gold': '#D2A23C',
+            'flp-gold-light': '#e4bd5f',
+            'flp-gold-muted': 'rgba(210, 162, 60, 0.2)',
+            'flp-gold-border': 'rgba(210, 162, 60, 0.4)',
+            'flp-white': '#FFFFFF',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo + Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="events.html" class="text-xs font-heading font-bold tracking-widest uppercase text-flp-gold border-b-2 border-flp-gold pb-1">Events</a>
+        <a href="join.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Join Us</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <!-- Primary CTA in Header -->
+      <div class="flex items-center gap-3">
+        <a href="join.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-md">
+          Become a Member
+        </a>
+        <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-transparent text-flp-white font-heading font-semibold text-xs tracking-wider uppercase rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Connect With Us
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-flp-green-dark/98 backdrop-blur-lg border-b border-flp-gold-border px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Home</a>
+      <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
+      <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
+      <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
+      <a href="events.html" class="block text-sm font-heading font-bold tracking-widest uppercase text-flp-gold">Events</a>
+      <a href="join.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Join Us</a>
+      <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
+      <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
+        <a href="join.html" class="block text-center w-full px-5 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm">
+          Become a Member
+        </a>
+        <a href="contact.html" class="block text-center w-full px-5 py-3 bg-transparent text-flp-white border border-flp-gold font-heading font-semibold text-xs tracking-wider uppercase rounded-sm">
+          Connect With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <section class="pt-28 pb-4 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-2 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/60">
+        <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+        <span>/</span>
+        <a href="events.html" class="hover:text-flp-gold transition-colors">Events Directory</a>
+        <span>/</span>
+        <span id="breadcrumb-title" class="text-flp-gold">Event Detail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Hero Banner -->
+  <section class="relative py-16 bg-grid-pattern border-b border-flp-gold-muted overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="max-w-4xl">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span id="hero-dept-badge" class="px-3 py-1 bg-flp-gold text-flp-green text-xs font-heading font-bold uppercase tracking-wider rounded-sm">
+            FLP Portfolio
+          </span>
+          <span id="hero-type-badge" class="px-3 py-1 bg-flp-green-dark text-flp-white/90 border border-flp-gold-border text-xs font-heading font-semibold uppercase tracking-wider rounded-sm">
+            Official Session
+          </span>
+          <span id="hero-status-badge" class="px-3 py-1 bg-green-900/60 text-green-300 border border-green-500/30 text-xs font-heading font-semibold uppercase tracking-wider rounded-sm">
+            Full Description Available
+          </span>
+        </div>
+
+        <h1 id="hero-title" class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-flp-white leading-tight mb-6">
+          National Youth Session
+        </h1>
+
+        <p id="hero-tagline" class="text-base sm:text-lg text-flp-white/80 leading-relaxed max-w-3xl">
+          Empowering youth leaders through structured parliamentary dialogue, legislative drafting, and policy leadership.
+        </p>
+
+        <!-- Meta Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-flp-gold-muted/60">
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Key / Speaker</div>
+            <div id="meta-speaker" class="text-sm font-bold text-flp-white mt-0.5">Secretariat Panel</div>
+          </div>
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Host Department</div>
+            <div id="meta-dept" class="text-sm font-bold text-flp-white mt-0.5">FLP Secretariat</div>
+          </div>
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Attendance</div>
+            <div id="meta-attendance" class="text-sm font-bold text-flp-white mt-0.5">250+ Delegates</div>
+          </div>
+          <div>
+            <div class="text-[11px] font-heading uppercase tracking-wider text-flp-gold font-bold">Location / Mode</div>
+            <div id="meta-mode" class="text-sm font-bold text-flp-white mt-0.5">Hybrid Assembly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Dynamic Content -->
+  <section class="py-16 bg-flp-green-dark border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left 8 Columns -->
+        <div class="lg:col-span-8 space-y-12">
+          
+          <!-- Key Feature Card -->
+          <div class="bg-flp-green border-2 border-flp-gold rounded-sm p-8 shadow-xl relative overflow-hidden" id="feature-box">
+            <div class="flex flex-col sm:flex-row items-start gap-6">
+              <div class="w-20 h-20 rounded-sm bg-flp-gold/20 border-2 border-flp-gold flex items-center justify-center text-flp-gold font-heading font-black text-2xl flex-shrink-0" id="feature-icon">
+                FLP
+              </div>
+              <div class="space-y-2">
+                <span class="px-2.5 py-0.5 bg-flp-gold/20 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-widest rounded-sm">
+                  Executive Brief
+                </span>
+                <h2 id="feature-headline" class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+                  Session Highlight
+                </h2>
+                <p id="feature-summary" class="text-sm text-flp-white/80 leading-relaxed">
+                  Summary loading...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detailed Narrative -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">01. Overview</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Event Context & Purpose
+            </h3>
+            <div id="narrative-body" class="space-y-4 text-sm text-flp-white/80 leading-relaxed">
+              <p>Description text...</p>
+            </div>
+          </div>
+
+          <!-- Agenda / Breakdown -->
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">02. Agenda & Structure</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Program Outline
+            </h3>
+            <div id="agenda-container" class="space-y-4">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Takeaways -->
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">03. Key Outcomes</span>
+              <div class="h-px bg-flp-gold-muted flex-grow"></div>
+            </div>
+            <h3 class="text-2xl font-heading font-extrabold text-flp-white uppercase tracking-tight">
+              Key Policy Outcomes
+            </h3>
+            <div id="takeaways-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 4 Columns -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-flp-green border border-flp-gold-border rounded-sm p-6 space-y-4">
+            <h4 class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold border-b border-flp-gold-muted/50 pb-2">
+              Action & Participation
+            </h4>
+            <div class="space-y-3 text-xs">
+              <div>
+                <span class="text-flp-white/60 block text-[11px] uppercase font-semibold">Organized By:</span>
+                <span id="side-dept" class="text-flp-white font-bold">FLP Secretariat</span>
+              </div>
+              <div>
+                <span class="text-flp-white/60 block text-[11px] uppercase font-semibold">Participation:</span>
+                <span class="text-green-400 font-bold">Open to All Verified Youth Delegates</span>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-flp-gold-muted/50 space-y-2">
+              <a href="join.html" class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
+                <span>Apply for FLP Membership</span>
+              </a>
+              <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20an%20inquiry%20regarding%20an%20FLP%20Event." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-wider rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+                <span>Contact Secretariat</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-6 space-y-3">
+            <h4 class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">
+              Browse Other Events
+            </h4>
+            <div class="space-y-2 text-xs">
+              <a href="event-law-webinar.html" class="block p-3 bg-flp-green-dark border border-flp-gold-muted/50 rounded-sm hover:border-flp-gold transition-colors">
+                <div class="font-bold text-flp-white uppercase">Law Webinar (Adv. Nisa Ara)</div>
+                <div class="text-[11px] text-flp-gold mt-0.5">Constitutional Literacy</div>
+              </a>
+              <a href="event-detail.html?id=parliamentary-simulation" class="block p-3 bg-flp-green-dark border border-flp-gold-muted/50 rounded-sm hover:border-flp-gold transition-colors">
+                <div class="font-bold text-flp-white uppercase">Youth Parliamentary Simulation</div>
+                <div class="text-[11px] text-flp-gold mt-0.5">Plenary Debates & Bills</div>
+              </a>
+            </div>
+            <a href="events.html" class="block text-center text-xs text-flp-gold font-heading font-semibold uppercase hover:underline pt-2">
+              Back to Events Directory →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer with Logo -->
+  <footer class="bg-flp-green-dark py-12 border-t border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
+        
+        <!-- Brand Logo + Wordmark & Tagline -->
+        <div class="flex items-center gap-4">
+          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <div>
+            <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
+            <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
+          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
+          <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
+          <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
+          <a href="events.html" class="text-flp-gold transition-colors">Events</a>
+          <a href="join.html" class="hover:text-flp-gold transition-colors">Join Us</a>
+          <a href="contact.html" class="hover:text-flp-gold transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-flp-white/60">
+        <div>
+          &copy; Future Leaders Parliament. All institutional rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-flp-gold">
+          <a href="https://wa.me/923097951212?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +92 309 7951212</a>
+          <span>•</span>
+          <a href="mailto:futureleadersparliament@gmail.com" class="hover:underline">futureleadersparliament@gmail.com</a>
+          <span>•</span>
+          <a href="https://instagram.com/futureleadersparliament" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Event Loading Script -->
+  <script>
+    const eventsDB = {
+      "parliamentary-simulation": {
+        title: "National Youth Parliamentary Simulation (NYPS 2026)",
+        dept: "Secretariat & Parliamentary Affairs",
+        type: "Flagship Simulation",
+        speaker: "Secretariat Speaker & Shadow Cabinet",
+        attendance: "300+ Young Parliamentarians",
+        mode: "National Assembly Hall & Hybrid",
+        tagline: "A 3-day immersive simulation where youth delegates debate legislative policy, table private member bills, and scrutinize national budgets.",
+        featureHeadline: "Simulated Legislative Assembly & Committee Hearings",
+        featureSummary: "Delegates assumed the roles of government ministers, opposition leaders, and parliamentary committee chairs to draft 6 comprehensive reform acts on education and economy.",
+        narrative: [
+          "The National Youth Parliamentary Simulation (NYPS) stands as FLP's premier annual civic assembly, replicating the procedural rules, parliamentary debates, and legislative committees of the Parliament of Pakistan.",
+          "Over 300 delegates from all four provinces, Gilgit-Baltistan, and Azad Jammu & Kashmir convened to table private member bills, cross-examine shadow cabinet ministers, and pass youth-centric national resolutions."
+        ],
+        agenda: [
+          { time: "Day 1", title: "Inaugural Plenary & Oath of Office", desc: "Swearing-in of youth members of parliament, parliamentary etiquette briefing, and Prime Minister's opening speech." },
+          { time: "Day 2", title: "Legislative Standing Committees", desc: "Intensive clause-by-clause scrutiny of the Youth Employment & Digital Freelancing Protection Bill." },
+          { time: "Day 3", title: "Plenary Debate, Final Voting & Resolution", desc: "Third reading of proposed bills, voting by division, and adoption of the Islamabad Youth Declaration." }
+        ],
+        takeaways: [
+          { num: "1", title: "Parliamentary Rules of Procedure", desc: "Mastery of point of orders, privilege motions, and parliamentary debate decorum." },
+          { num: "2", title: "Bipartisan Consensus Building", desc: "Negotiating cross-bench compromises to achieve legislative majorities." },
+          { num: "3", title: "National Budget Analysis", desc: "Critiquing fiscal allocations and proposing data-backed amendments." },
+          { num: "4", title: "Leadership Under Pressure", desc: "Presenting extempore arguments during high-stakes parliamentary questions." }
+        ]
+      },
+      "diplomacy-summit": {
+        title: "Diplomacy & Global Governance Workshop",
+        dept: "Foreign Affairs & International Relations",
+        type: "Diplomatic Workshop",
+        speaker: "Ambassadors & IR Scholars",
+        attendance: "180+ Future Diplomats",
+        mode: "Secretariat Chamber / Islamabad",
+        tagline: "Equipping young leaders with international negotiation tactics, bilateral treaty drafting skills, and regional security analysis.",
+        featureHeadline: "Youth in Global Diplomacy & Foreign Policy",
+        featureSummary: "Participants engaged in simulated bilateral dialogues, multilateral diplomatic drafting, and crisis resolution simulations.",
+        narrative: [
+          "Organized by the FLP Department of Foreign Affairs, this workshop provided an intellectual forum on Pakistan's diplomatic engagements, trade corridors, and climate diplomacy on the global stage.",
+          "Distinguished guest diplomats and foreign policy analysts mentored delegates on diplomatic communications, speechwriting for multilateral forums, and international law compliance."
+        ],
+        agenda: [
+          { time: "Session 1", title: "Foundations of Bilateral & Multilateral Diplomacy", desc: "Examining treaty frameworks, the Vienna Convention, and diplomatic immunity standards." },
+          { time: "Session 2", title: "Crisis Management & Negotiation Simulation", desc: "Hands-on regional diplomacy simulation requiring consensus on transboundary water governance." },
+          { time: "Session 3", title: "Youth Diplomacy & Think Tank Engagement", desc: "How aspiring diplomats can write policy briefs that reach foreign ministry desks." }
+        ],
+        takeaways: [
+          { num: "1", title: "Diplomatic Protocol", desc: "Mastery of diplomatic drafting, demarches, and communiqués." },
+          { num: "2", title: "Strategic Negotiation", desc: "Navigating competing national interests with tact and mutual compromise." },
+          { num: "3", title: "Geopolitical Analysis", desc: "Understanding the balance of power, international trade treaties, and multilateral pacts." },
+          { num: "4", title: "Global Representation", desc: "Advocating Pakistan's perspective with nuance and factual rigor." }
+        ]
+      },
+      "climate-forum": {
+        title: "Climate Action & Sustainable Policy Forum",
+        dept: "Climate Change & Environmental Protection",
+        type: "Policy Roundtable",
+        speaker: "Environmental Scientists & Policy Advisors",
+        attendance: "200+ Researchers & Activists",
+        mode: "Digital Assembly & Policy Forum",
+        tagline: "Formulating concrete legislative strategies for climate adaptation, renewable energy transition, and disaster resilience.",
+        featureHeadline: "Legislative Roadmaps for Climate Resilience",
+        featureSummary: "Youth delegates collaborated with environmental scientists to draft actionable national policies on renewable energy and water conservation.",
+        narrative: [
+          "Given Pakistan's high vulnerability to global climate shifts, the FLP Climate Protection Department gathered researchers and policy enthusiasts to author actionable statutory reforms.",
+          "The forum concluded with the presentation of the Youth Climate Action Whitepaper to relevant stakeholders and academic departments."
+        ],
+        agenda: [
+          { time: "Session 1", title: "Climate Finance & Loss and Damage Mechanisms", desc: "Understanding international climate finance access for developing economies." },
+          { time: "Session 2", title: "Local Green Infrastructure & Renewable Policy", desc: "Legislative proposals for rooftop solar incentives and urban afforestation." },
+          { time: "Session 3", title: "Disaster Preparedness & Youth Mobilization", desc: "Creating volunteer flood-response brigades trained in rapid relief coordination." }
+        ],
+        takeaways: [
+          { num: "1", title: "Statutory Environmental Audits", desc: "Drafting policies that enforce corporate environmental impact assessments." },
+          { num: "2", title: "Climate Justice Advocacy", desc: "Articulating climate reparations and green transition frameworks." },
+          { num: "3", title: "Community Mobilization", desc: "Organizing grassroots tree planting and sustainable waste management campaigns." },
+          { num: "4", title: "Policy Whitepapers", desc: "Translating scientific research into clear legislative proposals." }
+        ]
+      },
+      "women-in-governance": {
+        title: "Women in Governance & Public Leadership Masterclass",
+        dept: "Human Rights & Social Welfare",
+        type: "Leadership Cohort",
+        speaker: "Senior Women Parliamentarians & Jurists",
+        attendance: "160+ Emerging Leaders",
+        mode: "Executive Briefing Room / Zoom",
+        tagline: "Empowering young female leaders to break barriers in public administration, legislative advocacy, and community governance.",
+        featureHeadline: "Fostering Next-Gen Female Political Leadership",
+        featureSummary: "Interactive mentorship masterclass focusing on public speaking, political campaign management, and policy drafting for women empowerment.",
+        narrative: [
+          "This dedicated cohort was organized by the FLP Human Rights Department to address underrepresentation of women in public policy and leadership positions.",
+          "Delegates received direct guidance on navigating institutional spaces, overcoming systemic barriers, and spearheading civic transformation."
+        ],
+        agenda: [
+          { time: "Session 1", title: "Women in Legislative Assemblies: History & Future", desc: "Examining reserved seat allocations, female parliamentary caucuses, and policy impact." },
+          { time: "Session 2", title: "Leadership, Public Speaking & Media Strategy", desc: "Overcoming imposter syndrome and commanding the floor during high-stakes policy debates." },
+          { time: "Session 3", title: "Advocacy for Gender-Sensitive Legislation", desc: "Drafting amendments to workplace safety, digital harassment, and maternity protection laws." }
+        ],
+        takeaways: [
+          { num: "1", title: "Policy Advocacy", desc: "Leading grassroots campaigns that influence public opinion and legislative change." },
+          { num: "2", title: "Public Oratory", desc: "Delivering commanding speeches and persuasive policy presentations." },
+          { num: "3", title: "Mentorship Networks", desc: "Connecting with established female mentors across legal and governance sectors." },
+          { num: "4", title: "Institutional Navigation", desc: "Confidently leading committees and executing strategic organizational reforms." }
+        ]
+      },
+      "economic-colloquium": {
+        title: "National Economic Revival & Youth Enterprise Colloquium",
+        dept: "Finance & Economic Affairs",
+        type: "Economic Colloquium",
+        speaker: "Fiscal Economists & Tech Founders",
+        attendance: "220+ Analysts & Students",
+        mode: "Lahore / Islamabad Hybrid",
+        tagline: "Analyzing macroeconomic policy, digital freelancing growth, inflation containment, and modern youth startup ecosystems.",
+        featureHeadline: "Data-Driven Roadmaps for Economic Growth",
+        featureSummary: "Economists and young policy researchers debated taxation reforms, export diversification, and fostering a digital economy in Pakistan.",
+        narrative: [
+          "Organized by the Department of Finance & IT Affairs, this colloquium explored strategies to unlock Pakistan's demographic dividend through digital tech exports and fiscal accountability.",
+          "The session yielded a comprehensive 10-point recommendations paper submitted to shadow cabinet policy channels."
+        ],
+        agenda: [
+          { time: "Session 1", title: "Macroeconomic Overview: Debt, Inflation & Growth", desc: "Analyzing monetary policy, tax-to-GDP ratio, and restructuring state enterprises." },
+          { time: "Session 2", title: "The IT & Freelancing Revolution", desc: "Policy reforms to simplify international payment gateways and incentivize software exports." },
+          { time: "Session 3", title: "Youth Startup Incubation & Venture Financing", desc: "Designing low-interest credit schemes and seed funding policies for young entrepreneurs." }
+        ],
+        takeaways: [
+          { num: "1", title: "Fiscal Analysis", desc: "Evaluating national budgets and macro indicators with precision." },
+          { num: "2", title: "Digital Export Strategy", desc: "Crafting policies to scale Pakistan's IT and creative services globally." },
+          { num: "3", title: "Taxation Reform Concepts", desc: "Broadening the tax net fairly while protecting low-income earners." },
+          { num: "4", title: "Enterprise Building", desc: "Leveraging policy incentives to launch and scale sustainable social enterprises." }
+        ]
+      }
+    };
+
+    // Parse URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('id');
+
+    if (eventId === 'law-webinar') {
+      window.location.replace('event-law-webinar.html');
+    } else {
+      const data = eventsDB[eventId] || eventsDB['parliamentary-simulation'];
+
+      document.getElementById('page-title').textContent = `${data.title} | Future Leaders Parliament`;
+      document.getElementById('breadcrumb-title').textContent = data.title;
+      document.getElementById('hero-dept-badge').textContent = data.dept;
+      document.getElementById('hero-type-badge').textContent = data.type;
+      document.getElementById('hero-title').textContent = data.title;
+      document.getElementById('hero-tagline').textContent = data.tagline;
+
+      document.getElementById('meta-speaker').textContent = data.speaker;
+      document.getElementById('meta-dept').textContent = data.dept;
+      document.getElementById('meta-attendance').textContent = data.attendance;
+      document.getElementById('meta-mode').textContent = data.mode;
+      document.getElementById('side-dept').textContent = data.dept;
+
+      document.getElementById('feature-headline').textContent = data.featureHeadline;
+      document.getElementById('feature-summary').textContent = data.featureSummary;
+
+      // Render Narrative
+      const narrativeEl = document.getElementById('narrative-body');
+      narrativeEl.innerHTML = data.narrative.map(p => `<p>${p}</p>`).join('');
+
+      // Render Agenda
+      const agendaEl = document.getElementById('agenda-container');
+      agendaEl.innerHTML = data.agenda.map(a => `
+        <div class="bg-flp-green border border-flp-gold-muted rounded-sm p-5 space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider">${a.time}</span>
+            <span class="px-2 py-0.5 bg-flp-green-dark text-flp-white/70 text-[10px] font-heading font-semibold uppercase rounded-sm">Module</span>
+          </div>
+          <h4 class="text-base font-heading font-bold text-flp-white">${a.title}</h4>
+          <p class="text-xs text-flp-white/75 leading-relaxed">${a.desc}</p>
+        </div>
+      `).join('');
+
+      // Render Takeaways
+      const takeawaysEl = document.getElementById('takeaways-container');
+      takeawaysEl.innerHTML = data.takeaways.map(t => `
+        <div class="bg-flp-green border border-flp-gold-border rounded-sm p-5">
+          <div class="w-8 h-8 rounded-sm bg-flp-gold/20 text-flp-gold flex items-center justify-center font-heading font-bold text-sm mb-3">${t.num}</div>
+          <h5 class="text-sm font-heading font-bold text-flp-white uppercase mb-1">${t.title}</h5>
+          <p class="text-xs text-flp-white/75 leading-relaxed">${t.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (isHidden) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        } else {
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
