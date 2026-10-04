@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   
-  <title>Future Leaders Parliament (FLP) | Voice of the Next Generation</title>
-  <meta name="description" content="Future Leaders Parliament (FLP) is Pakistan's premier youth leadership platform, cultivating visionary changemakers through diplomacy, constitutional literacy, and governance." />
-  <meta name="keywords" content="Future Leaders Parliament, FLP Pakistan, Youth Leadership Pakistan, Youth Parliament, Constitutional Literacy, Nissa Awards, Afeef Ul Hussain" />
+  <title>Future Leaders Parliament (FLP) | Pakistan's Premier Youth Leadership Platform</title>
+  <meta name="description" content="Future Leaders Parliament (FLP) is Pakistan's premier non-partisan youth parliamentary platform, empowering visionary leaders through constitutional literacy, policy research, diplomacy, and executive governance." />
+  <meta name="keywords" content="Future Leaders Parliament, FLP Pakistan, Youth Parliament Pakistan, Constitutional Literacy, Youth Leadership, Nissa Awards, Arfah Sohail, Afeef Ul Hussain, Youth Governance" />
   <meta name="author" content="Future Leaders Parliament (FLP)" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://afeefulhussain.github.io/FLP/" />
@@ -21,7 +21,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://afeefulhussain.github.io/FLP/" />
   <meta property="og:title" content="Future Leaders Parliament (FLP) | Voice of the Next Generation" />
-  <meta property="og:description" content="Empowering youth through constitutional literacy, ethical governance, diplomacy, and community impact across Pakistan." />
+  <meta property="og:description" content="Empowering youth through constitutional literacy, ethical governance, diplomacy, and grassroots community impact across Pakistan." />
   <meta property="og:image" content="https://afeefulhussain.github.io/FLP/og-image.png" />
   <meta property="og:site_name" content="Future Leaders Parliament" />
 
@@ -49,6 +49,8 @@
               white: '#FFFFFF',
               'green-dark': '#011c0e',
               'green-card': '#033b1e',
+              'green-elevated': '#044a26',
+              'gold-light': '#F5D77F',
               'gold-muted': 'rgba(210, 162, 60, 0.2)',
               'gold-border': 'rgba(210, 162, 60, 0.35)'
             }
@@ -83,6 +85,13 @@
       height: 3px;
       background-color: #D2A23C;
     }
+    .hover-lift {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.5);
+    }
   </style>
 </head>
 <body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green">
@@ -93,7 +102,7 @@
       
       <!-- Brand Logo + Wordmark -->
       <a href="index.html" class="flex items-center gap-3 group">
-        <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <img src="logo.png" alt="Future Leaders Parliament Official Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
         <div class="flex flex-col">
           <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
           <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
@@ -121,7 +130,7 @@
         </a>
         
         <!-- Mobile Menu Toggle Button -->
-        <button id="menu-toggle" type="button" aria-label="Toggle navigation" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation menu" class="lg:hidden p-2 rounded-sm text-flp-gold hover:text-flp-white hover:bg-flp-green-dark border border-flp-gold-muted">
           <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -138,7 +147,7 @@
       <a href="about.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">About</a>
       <a href="departments.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Departments</a>
       <a href="team.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Our Team</a>
-      <a href="events.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Events</a>
+      <a href="events.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Events & Summits</a>
       <a href="join.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Join Us</a>
       <a href="contact.html" class="block text-sm font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold">Contact</a>
       <div class="pt-4 border-t border-flp-gold-muted flex flex-col gap-2">
@@ -152,141 +161,573 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen pt-36 pb-20 flex items-center bg-grid-pattern overflow-hidden">
+  <!-- 1. Hero Section -->
+  <section class="relative min-h-[92vh] pt-32 pb-20 flex items-center bg-grid-pattern overflow-hidden border-b border-flp-gold-muted/40">
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <div class="lg:col-span-8">
-          <!-- Clean Typography Tagline -->
-          <span class="font-heading font-bold text-xs sm:text-sm tracking-widest text-flp-gold uppercase block mb-4">
-            Voice of the Next Generation
-          </span>
+        <div class="lg:col-span-7 xl:col-span-8">
+          
+          <!-- Official Tagline Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-flp-gold-muted/40 border border-flp-gold-border mb-6">
+            <span class="w-2.5 h-2.5 rounded-full bg-flp-gold animate-pulse"></span>
+            <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold">Official Youth Parliamentary Forum of Pakistan</span>
+          </div>
 
           <!-- Headline -->
-          <h1 class="font-heading font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-flp-white leading-[1.08] mb-6">
-            Future Leaders <br />
-            <span class="text-flp-gold">Parliament</span>
+          <h1 class="font-heading font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-flp-white leading-[1.05] mb-6">
+            Empowering The <br />
+            <span class="text-flp-gold">Next Generation</span> <br class="hidden sm:block"/>
+            Of Visionary Leaders
           </h1>
 
           <!-- Sub-headline -->
-          <p class="text-base sm:text-xl text-flp-white/85 font-normal leading-relaxed max-w-2xl mb-10">
-            A youth-led platform built around leadership, civic engagement, representation, and the voice of the next generation.
+          <p class="text-base sm:text-lg md:text-xl text-slate-200 font-normal leading-relaxed max-w-2xl mb-8">
+            Future Leaders Parliament (FLP) is a non-partisan institutional chamber preparing articulate youth for statecraft, constitutional diplomacy, legislative analysis, and ethical public governance.
           </p>
 
           <!-- CTA Cluster -->
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="about.html" class="px-7 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-lg">
-              About The Parliament
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            <a href="join.html" class="px-8 py-4 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border-2 border-flp-gold transition-all duration-200 shadow-xl flex items-center gap-2">
+              Apply For Membership <span>→</span>
             </a>
-            <a href="team.html" class="px-7 py-3.5 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-white/20 hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
-              Punjab Cabinet
+            <a href="events.html" class="px-8 py-4 bg-flp-green-dark/80 backdrop-blur-sm text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+              Explore Summits & Events
             </a>
+          </div>
+
+          <!-- Live Feature Highlights Pill -->
+          <div class="flex flex-wrap items-center gap-6 pt-4 border-t border-flp-gold-muted/40 text-xs text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="text-flp-gold font-bold">✓</span> Non-Partisan Forum
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-flp-gold font-bold">✓</span> Constitutional Literacy (Articles 8–28)
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-flp-gold font-bold">✓</span> 22 Executive Departments
+            </div>
           </div>
         </div>
 
         <!-- Prominent Logo Emblem Feature in Hero -->
-        <div class="lg:col-span-4 flex justify-center lg:justify-end">
-          <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-flp-gold/30 to-flp-gold/10 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
-            <img src="logo.png" alt="Future Leaders Parliament Official Emblem" class="relative w-56 sm:w-72 lg:w-80 h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-300" />
+        <div class="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end">
+          <div class="relative group max-w-sm">
+            <div class="absolute -inset-2 bg-gradient-to-r from-flp-gold/40 via-flp-gold/20 to-flp-gold/5 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
+            
+            <div class="relative bg-flp-green-dark/90 border-2 border-flp-gold-border rounded-2xl p-8 text-center shadow-2xl backdrop-blur-sm">
+              <img src="logo.png" alt="Future Leaders Parliament Official Emblem" class="w-48 sm:w-56 h-auto mx-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)] group-hover:scale-105 transition-transform duration-300" />
+              
+              <div class="mt-6 pt-6 border-t border-flp-gold-muted/50">
+                <div class="text-xs font-heading font-extrabold tracking-widest uppercase text-flp-gold">Provincial & National Inductions</div>
+                <div class="text-sm font-heading font-bold text-flp-white mt-1">2026–2027 Parliamentary Cohort</div>
+                <a href="join.html" class="mt-3 inline-block text-xs text-flp-gold underline font-semibold hover:text-white transition-colors">
+                  Submit Candidate Credentials →
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
-
-    <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-flp-gold-border to-transparent"></div>
   </section>
 
-  <!-- Overview Highlights Grid (Clean 3-card structure) -->
-  <section class="py-24 bg-flp-green-dark border-b border-flp-gold-muted">
+  <!-- 2. National Impact Metrics Counter Strip -->
+  <section class="py-12 bg-flp-green-dark border-b border-flp-gold-muted/50">
     <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         
-        <!-- Card 1: About -->
-        <a href="about.html" class="group bg-flp-green p-7 border border-flp-gold-border hover:border-flp-gold rounded-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg">
-          <div>
-            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2.5 group-hover:text-flp-gold transition-colors">About FLP</h3>
-            <p class="text-xs text-flp-white/70 leading-relaxed mb-6">
-              Discover our origin, vision, and institutional mission to empower youth dialogue, constitutional literacy, and democratic leadership.
-            </p>
-          </div>
-          <span class="text-xs font-heading font-bold uppercase text-flp-gold flex items-center gap-1.5">
-            Explore About <span class="group-hover:translate-x-1.5 transition-transform">→</span>
-          </span>
-        </a>
+        <div class="p-4 border-r border-flp-gold-muted/30 last:border-r-0">
+          <div class="text-3xl sm:text-5xl font-heading font-black text-flp-gold">2,500+</div>
+          <div class="text-xs font-heading font-semibold uppercase tracking-wider text-slate-300 mt-2">Active Youth Delegates</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Across Punjab & National Chapters</div>
+        </div>
 
-        <!-- Card 2: Departments & Initiatives -->
-        <a href="departments.html" class="group bg-flp-green p-7 border border-flp-gold-border hover:border-flp-gold rounded-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg">
-          <div>
-            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2.5 group-hover:text-flp-gold transition-colors">Departments</h3>
-            <p class="text-xs text-flp-white/70 leading-relaxed mb-6">
-              22 Provincial Shadow Cabinet portfolios, parliamentary assemblies, civic boot camps, and whitepaper research publications.
-            </p>
-          </div>
-          <span class="text-xs font-heading font-bold uppercase text-flp-gold flex items-center gap-1.5">
-            View Portfolios <span class="group-hover:translate-x-1.5 transition-transform">→</span>
-          </span>
-        </a>
+        <div class="p-4 border-r border-flp-gold-muted/30 last:border-r-0">
+          <div class="text-3xl sm:text-5xl font-heading font-black text-flp-white">22</div>
+          <div class="text-xs font-heading font-semibold uppercase tracking-wider text-flp-gold mt-2">Executive Departments</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Specialized Shadow Ministries</div>
+        </div>
 
-        <!-- Card 3: Events & Webinars -->
-        <a href="events.html" class="group bg-flp-green p-7 border border-flp-gold-border hover:border-flp-gold rounded-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg">
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class="px-2 py-0.5 bg-flp-gold/20 text-flp-gold text-[9px] font-heading font-bold uppercase tracking-wider rounded-sm">Featured Spotlight</span>
-            </div>
-            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2.5 group-hover:text-flp-gold transition-colors">Events & Summits</h3>
-            <p class="text-xs text-flp-white/70 leading-relaxed mb-6">
-              The countdown begins for the <strong>Women’s Empowerment Summit & Nissa Awards 2026</strong>, plus past masterclasses & simulations.
-            </p>
-          </div>
-          <span class="text-xs font-heading font-bold uppercase text-flp-gold flex items-center gap-1.5">
-            Explore Events <span class="group-hover:translate-x-1.5 transition-transform">→</span>
-          </span>
-        </a>
+        <div class="p-4 border-r border-flp-gold-muted/30 last:border-r-0">
+          <div class="text-3xl sm:text-5xl font-heading font-black text-flp-gold">15+</div>
+          <div class="text-xs font-heading font-semibold uppercase tracking-wider text-slate-300 mt-2">Summits & Masterclasses</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">National Assemblies & Law Forums</div>
+        </div>
 
-        <!-- Card 4: Our Team / Punjab Cabinet -->
-        <a href="team.html" class="group bg-flp-green p-7 border border-flp-gold-border hover:border-flp-gold rounded-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg">
-          <div>
-            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-2.5 group-hover:text-flp-gold transition-colors">Punjab Cabinet</h3>
-            <p class="text-xs text-flp-white/70 leading-relaxed mb-6">
-              Meet President Arfah Sohail and the Executive Punjab Cabinet (2026–2027) leading the parliament forward.
-            </p>
-          </div>
-          <span class="text-xs font-heading font-bold uppercase text-flp-gold flex items-center gap-1.5">
-            Meet The Cabinet <span class="group-hover:translate-x-1.5 transition-transform">→</span>
-          </span>
-        </a>
+        <div class="p-4">
+          <div class="text-3xl sm:text-5xl font-heading font-black text-flp-white">40+</div>
+          <div class="text-xs font-heading font-semibold uppercase tracking-wider text-flp-gold mt-2">Policy Whitepapers</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Actionable Legislative Proposals</div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Institutional Narrative Section -->
-  <section class="py-24 bg-flp-green relative border-b border-flp-gold-muted">
-    <div class="max-w-5xl mx-auto px-6 text-center">
+  <!-- 3. Spotlight Event: Women’s Empowerment Summit & Nissa Awards 2026 -->
+  <section class="py-20 bg-gradient-to-b from-flp-green to-flp-green-dark relative overflow-hidden border-b border-flp-gold-muted/60">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       
-      <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Institutional Forum</span>
-      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-flp-white uppercase tracking-tight mb-4">
-        Empowering Youth Leadership & Civic Action
+      <div class="bg-gradient-to-r from-flp-green-dark via-flp-green-card to-flp-green-dark border-2 border-flp-gold/50 rounded-2xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        
+        <!-- Glowing background aura -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-flp-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-8 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-flp-gold/20 text-flp-gold border border-flp-gold/40 text-xs font-heading font-bold uppercase tracking-widest rounded-full">
+              <span class="w-2 h-2 rounded-full bg-flp-gold animate-ping"></span>
+              Official Event Spotlight 2026
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-heading font-black text-flp-white uppercase tracking-tight leading-snug">
+              The Countdown Begins For The <br />
+              <span class="text-flp-gold">Women’s Empowerment Summit & Nissa Awards 2026!</span>
+            </h2>
+
+            <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-3xl">
+              We are getting ready to honor the visionary female leaders, innovators, and changemakers who are shaping the future and creating lasting impact. Something truly extraordinary is under wraps—who will take home the awards this year?
+            </p>
+
+            <!-- 3 Core Pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3">
+              <div class="p-4 bg-flp-green-dark/80 border border-flp-gold-muted/40 rounded-lg">
+                <div class="text-lg text-flp-gold mb-1">🌟 <strong>Leadership</strong></div>
+                <div class="text-xs text-slate-300">Celebrating trailblazers shattering glass ceilings across public and private sectors.</div>
+              </div>
+
+              <div class="p-4 bg-flp-green-dark/80 border border-flp-gold-muted/40 rounded-lg">
+                <div class="text-lg text-flp-gold mb-1">💡 <strong>Innovation</strong></div>
+                <div class="text-xs text-slate-300">Spotlighting visionary ideas, research solutions, and pioneering initiatives.</div>
+              </div>
+
+              <div class="p-4 bg-flp-green-dark/80 border border-flp-gold-muted/40 rounded-lg">
+                <div class="text-lg text-flp-gold mb-1">🤝 <strong>Impact</strong></div>
+                <div class="text-xs text-slate-300">Recognizing meaningful grassroots change in communities nationwide.</div>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-wrap items-center gap-4">
+              <a href="event-nissa-awards.html" class="px-7 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-white transition-all duration-200 shadow-xl">
+                View Full Summit Details →
+              </a>
+              <a href="events.html" class="px-7 py-3.5 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+                Browse All Events
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 text-center">
+            <div class="p-6 bg-flp-green-dark rounded-xl border border-flp-gold/30 shadow-inner">
+              <div class="w-16 h-16 mx-auto rounded-full bg-flp-gold/20 border-2 border-flp-gold flex items-center justify-center text-flp-gold text-2xl mb-4">
+                👑
+              </div>
+              <h3 class="font-heading font-bold text-base text-flp-white uppercase">Nissa Awards 2026</h3>
+              <p class="text-xs text-slate-300 mt-2">
+                Stay tuned! Full details, speaker lineups, and nomination guidelines are coming soon.
+              </p>
+              <div class="mt-4 pt-4 border-t border-flp-gold-muted/30 text-xs font-semibold text-flp-gold">
+                Venue: Islamabad / Nationwide Hybrid
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Presidential Keynote & Executive Leadership -->
+  <section class="py-24 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- President Real Photograph Container -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md group">
+            <div class="absolute -inset-2 bg-gradient-to-tr from-flp-gold/30 to-transparent rounded-xl blur-lg"></div>
+            
+            <div class="relative bg-flp-green-dark border-2 border-flp-gold rounded-lg overflow-hidden shadow-2xl">
+              <img 
+                src="president.jpg" 
+                alt="Arfah Sohail — President, Future Leaders Parliament" 
+                class="w-full h-[400px] sm:h-[450px] object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-flp-green-dark via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 p-4 bg-flp-green-dark/95 backdrop-blur-sm border border-flp-gold/40 rounded text-center">
+                <h3 class="font-heading font-bold text-lg text-flp-white uppercase">Arfah Sohail</h3>
+                <p class="text-xs font-heading font-bold text-flp-gold uppercase tracking-widest mt-0.5">President, Future Leaders Parliament</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Presidential Keynote Text -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block">
+            Executive Leadership Address
+          </span>
+          
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-flp-white uppercase tracking-tight leading-tight">
+            "Pakistan's Future Belongs To Those Who Dare To Master <span class="text-flp-gold">Governance, Integrity & Constitutional Truth."</span>
+          </h2>
+          
+          <div class="gold-accent-line"></div>
+
+          <p class="text-sm sm:text-base text-slate-200 leading-relaxed">
+            "The challenges confronting our nation—economic stability, constitutional literacy, climate resilience, and equitable opportunity—demand more than passive observation. They require disciplined young minds trained in the art of debate, diplomatic tact, and actionable legislative drafting."
+          </p>
+
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            "At Future Leaders Parliament, we do not merely simulate assemblies; we groom the next generation of statesmen, judicial luminaries, economists, and civic changemakers who will lead Pakistan with unyielding purpose."
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a href="team.html" class="px-7 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-white transition-all shadow-md">
+              Meet Punjab Cabinet (2026–2027) →
+            </a>
+            <a href="about.html" class="px-7 py-3 bg-flp-green-dark text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all">
+              Our Vision & Origins
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Four Strategic Pillars of FLP -->
+  <section class="py-24 bg-flp-green-dark border-b border-flp-gold-muted/60">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Our Core Architecture</span>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-flp-white uppercase tracking-tight">The Four Pillars of FLP</h2>
+        <div class="gold-accent-line mx-auto mt-4 mb-6"></div>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          Our curriculum and institutional chambers are built on four cornerstone competencies required for high-impact leadership in modern Pakistan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-flp-green p-8 border border-flp-gold-border/60 rounded-xl hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-lg bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-xl text-flp-gold mb-6 font-bold">
+              01
+            </div>
+            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-3">Constitutional Literacy</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Deep dive into the Constitution of Pakistan (1973), Fundamental Rights (Articles 8–28), parliamentary rules of procedure, and judicial precedents.
+            </p>
+          </div>
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider flex items-center gap-1">
+            Rule of Law Focus
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-flp-green p-8 border border-flp-gold-border/60 rounded-xl hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-lg bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-xl text-flp-gold mb-6 font-bold">
+              02
+            </div>
+            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-3">Shadow Governance</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              22 executive portfolios scrutinizing state budgets, evaluating public infrastructure, and proposing alternative national policy roadmaps.
+            </p>
+          </div>
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider flex items-center gap-1">
+            Policy & Economy Focus
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-flp-green p-8 border border-flp-gold-border/60 rounded-xl hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-lg bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-xl text-flp-gold mb-6 font-bold">
+              03
+            </div>
+            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-3">Diplomacy & Debates</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Mastery of parliamentary rhetoric, cross-bench caucus negotiations, bilateral diplomacy, and foreign policy roundtables.
+            </p>
+          </div>
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider flex items-center gap-1">
+            Global Relations Focus
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-flp-green p-8 border border-flp-gold-border/60 rounded-xl hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-lg bg-flp-gold/20 border border-flp-gold flex items-center justify-center text-xl text-flp-gold mb-6 font-bold">
+              04
+            </div>
+            <h3 class="font-heading font-bold text-lg text-flp-white uppercase tracking-tight mb-3">Community Action</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Bridging legislative concepts with grassroots execution—leading legal aid camps, youth voter awareness, and environmental drives.
+            </p>
+          </div>
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-wider flex items-center gap-1">
+            Civic Impact Focus
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Executive Shadow Ministries & Department Portfolios Showcase -->
+  <section class="py-24 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Shadow Cabinet</span>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-flp-white uppercase tracking-tight">Executive Departments</h2>
+          <div class="gold-accent-line mt-3"></div>
+        </div>
+        <a href="departments.html" class="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-wider text-flp-gold hover:text-white transition-colors">
+          Explore All 22 Portfolios →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Dept 1: Law -->
+        <div class="bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-6 hover-lift">
+          <div class="text-2xl mb-3">⚖️</div>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase">Law & Constitutional Affairs</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-2">
+            Fundamental rights advocacy, legislative draftsmanship, High Court webinars, and legal aid literacy.
+          </p>
+          <a href="event-law-webinar.html" class="inline-block mt-4 text-xs text-flp-gold font-semibold underline hover:text-white">
+            View Law Masterclass →
+          </a>
+        </div>
+
+        <!-- Dept 2: Foreign Affairs -->
+        <div class="bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-6 hover-lift">
+          <div class="text-2xl mb-3">🌐</div>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase">Foreign Affairs & Diplomacy</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-2">
+            Regional geopolitical dynamics, bilateral accords, simulated diplomatic missions, and international law.
+          </p>
+          <a href="departments.html" class="inline-block mt-4 text-xs text-flp-gold font-semibold underline hover:text-white">
+            View Diplomatic Charter →
+          </a>
+        </div>
+
+        <!-- Dept 3: Finance & Economy -->
+        <div class="bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-6 hover-lift">
+          <div class="text-2xl mb-3">📈</div>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase">Finance & Youth Economy</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-2">
+            Macroeconomic audit, digital freelancing growth, tax reform proposals, and startup venture incubation.
+          </p>
+          <a href="departments.html" class="inline-block mt-4 text-xs text-flp-gold font-semibold underline hover:text-white">
+            View Economic Colloquium →
+          </a>
+        </div>
+
+        <!-- Dept 4: Women Empowerment -->
+        <div class="bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-6 hover-lift">
+          <div class="text-2xl mb-3">👑</div>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase">Women Empowerment & Equity</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-2">
+            Nissa Awards 2026, gender-inclusive policy formulation, workplace safety legislation, and mentorship.
+          </p>
+          <a href="event-nissa-awards.html" class="inline-block mt-4 text-xs text-flp-gold font-semibold underline hover:text-white">
+            View Nissa Awards 2026 →
+          </a>
+        </div>
+
+        <!-- Dept 5: Climate Action -->
+        <div class="bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-6 hover-lift">
+          <div class="text-2xl mb-3">🌿</div>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase">Climate Action & Environment</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-2">
+            Flood relief policy, smog mitigation frameworks, renewable transition papers, and youth green brigades.
+          </p>
+          <a href="departments.html" class="inline-block mt-4 text-xs text-flp-gold font-semibold underline hover:text-white">
+            View Climate Policy Papers →
+          </a>
+        </div>
+
+        <!-- Dept 6: IT & Freelance -->
+        <div class="bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-6 hover-lift">
+          <div class="text-2xl mb-3">💻</div>
+          <h3 class="font-heading font-bold text-lg text-flp-white uppercase">IT & Digital Innovation</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-2">
+            AI governance, digital payment solutions, cybersecurity ethics, and national software export acceleration.
+          </p>
+          <a href="departments.html" class="inline-block mt-4 text-xs text-flp-gold font-semibold underline hover:text-white">
+            View IT Framework →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. How FLP Works: The 4-Step Delegate Journey -->
+  <section class="py-24 bg-flp-green-dark border-b border-flp-gold-muted/60">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Roadmap to Leadership</span>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-flp-white uppercase tracking-tight">The FLP Delegate Journey</h2>
+        <div class="gold-accent-line mx-auto mt-4 mb-6"></div>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          From application submission to presenting legislative whitepapers before national stakeholders—here is how you evolve within our parliament.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="p-6 bg-flp-green rounded-lg border border-flp-gold-muted/50 relative">
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-widest mb-2">Step 01</div>
+          <h3 class="font-heading font-bold text-base text-flp-white uppercase mb-2">Merit Application</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Submit your background, statement of intent, and preferred departmental portfolio via our official portal.
+          </p>
+        </div>
+
+        <div class="p-6 bg-flp-green rounded-lg border border-flp-gold-muted/50 relative">
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-widest mb-2">Step 02</div>
+          <h3 class="font-heading font-bold text-base text-flp-white uppercase mb-2">Executive Induction</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Undergo constitutional masterclasses, legal literacy training, and procedural drills led by senior legal luminaries.
+          </p>
+        </div>
+
+        <div class="p-6 bg-flp-green rounded-lg border border-flp-gold-muted/50 relative">
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-widest mb-2">Step 03</div>
+          <h3 class="font-heading font-bold text-base text-flp-white uppercase mb-2">Plenary Debates</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Table private member bills, cross-examine shadow cabinet ministers, and vote during national parliamentary simulations.
+          </p>
+        </div>
+
+        <div class="p-6 bg-flp-green rounded-lg border border-flp-gold-muted/50 relative">
+          <div class="text-xs font-heading font-bold text-flp-gold uppercase tracking-widest mb-2">Step 04</div>
+          <h3 class="font-heading font-bold text-base text-flp-white uppercase mb-2">Policy Impact</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Publish shadow cabinet whitepapers, receive official parliamentary credentials, and lead national civic campaigns.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="join.html" class="inline-flex items-center gap-2 px-8 py-4 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-white transition-all shadow-xl">
+          Begin Your Delegate Journey Today →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Frequently Asked Questions (FAQ Section) -->
+  <section class="py-24 bg-flp-green border-b border-flp-gold-muted">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <span class="font-heading font-bold text-xs tracking-widest uppercase text-flp-gold block mb-2">Transparency & Clarifications</span>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-flp-white uppercase tracking-tight">Frequently Asked Questions</h2>
+        <div class="gold-accent-line mx-auto mt-4"></div>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm sm:text-base text-flp-white uppercase list-none">
+            <span>What is the Future Leaders Parliament (FLP)?</span>
+            <span class="text-flp-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-flp-gold-muted/30 pt-3">
+            FLP is an institutional youth forum designed to equip Pakistani youth with statecraft skills, constitutional literacy, parliamentary debating decorum, and public policy formulation expertise.
+          </p>
+        </details>
+
+        <details class="group bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm sm:text-base text-flp-white uppercase list-none">
+            <span>Is FLP affiliated with any political party?</span>
+            <span class="text-flp-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-flp-gold-muted/30 pt-3">
+            No. Future Leaders Parliament is strictly independent, non-partisan, and meritocratic. We do not promote or represent any political party. Our focus is national advancement and democratic education.
+          </p>
+        </details>
+
+        <details class="group bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm sm:text-base text-flp-white uppercase list-none">
+            <span>Who is eligible to apply for membership?</span>
+            <span class="text-flp-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-flp-gold-muted/30 pt-3">
+            Students, young professionals, lawyers, researchers, and aspiring civic leaders aged 16 to 32 across all provinces of Pakistan and overseas diaspora are eligible to apply.
+          </p>
+        </details>
+
+        <details class="group bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm sm:text-base text-flp-white uppercase list-none">
+            <span>How do I get involved with the Women’s Empowerment Summit & Nissa Awards 2026?</span>
+            <span class="text-flp-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-flp-gold-muted/30 pt-3">
+            Visit our dedicated <a href="event-nissa-awards.html" class="text-flp-gold underline">Nissa Awards 2026</a> page for the latest updates on speaker panels, delegate registration, and nomination guidelines.
+          </p>
+        </details>
+
+        <details class="group bg-flp-green-card border border-flp-gold-border/60 rounded-lg p-5 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-bold text-sm sm:text-base text-flp-white uppercase list-none">
+            <span>How can institutional delegations register?</span>
+            <span class="text-flp-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-flp-gold-muted/30 pt-3">
+            Colleges, universities, and youth organizations can contact our Secretariat Desk directly via WhatsApp at <a href="https://wa.me/923286444392" class="text-flp-gold underline">+92 328 6444392</a> or email us at futureleadersparliament@gmail.com.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. Universal Master Call-To-Action (CTA) -->
+  <section class="py-20 bg-gradient-to-r from-flp-green-dark via-flp-green to-flp-green-dark border-t border-b border-flp-gold-muted text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      
+      <span class="inline-block px-3 py-1 bg-flp-gold/20 text-flp-gold text-xs font-heading font-bold uppercase tracking-widest rounded-full mb-4">
+        Your Seat At The Table Awaits
+      </span>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-flp-white uppercase tracking-tight leading-tight">
+        Ready To Shape The Future Of Pakistan?
       </h2>
-      <div class="gold-accent-line mx-auto mb-8"></div>
-      
-      <p class="text-base sm:text-lg text-flp-white/90 leading-relaxed mb-6 max-w-3xl mx-auto">
-        The <strong>Future Leaders Parliament (FLP)</strong> stands as a premier institutional forum engineered to nurture, debate, and elevate the next generation of changemakers.
-      </p>
-      <p class="text-sm sm:text-base text-flp-white/75 leading-relaxed mb-10 max-w-3xl mx-auto">
-        We bridge the gap between emerging youth talent and governance ecosystems through rigorous debate, policy drafting, and civic engagement across Punjab and beyond.
+
+      <p class="mt-4 text-sm sm:text-base text-slate-200 max-w-xl mx-auto leading-relaxed">
+        Join 2,500+ youth leaders, debate transformative policies, participate in national masterclasses, and champion constitutional integrity.
       </p>
 
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="about.html" class="px-7 py-3.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200 shadow-md">
-          Read Our Full Story
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="join.html" class="px-8 py-4 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm border-2 border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-2xl">
+          Apply For Membership Now
         </a>
-        <a href="departments.html" class="px-7 py-3.5 bg-flp-green-dark text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
-          Explore Shadow Cabinet
+        <a href="https://wa.me/923286444392?text=Hi%2C%20I%20have%20a%20query%20relevant%20to%20Future%20Leaders%20Parliament%20(FLP)." target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          WhatsApp Secretariat Desk
         </a>
       </div>
 
@@ -294,13 +735,13 @@
   </section>
 
   <!-- Footer with Logo -->
-  <footer class="bg-flp-green py-12 border-t border-flp-gold-muted">
+  <footer class="bg-flp-green-dark py-12 border-t border-flp-gold-muted">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-flp-gold-muted/40">
         
         <!-- Brand Logo + Wordmark & Tagline -->
         <div class="flex items-center gap-4">
-          <img src="logo.png" alt="FLP Logo" class="w-12 h-12 object-contain" />
+          <img src="logo.png" alt="Future Leaders Parliament Logo" class="w-12 h-12 object-contain" />
           <div>
             <div class="font-heading font-bold text-sm tracking-tight text-flp-white uppercase">Future Leaders Parliament</div>
             <div class="font-heading font-bold text-[10px] sm:text-xs tracking-widest text-flp-gold uppercase mt-0.5">Voice of the Next Generation</div>
@@ -309,7 +750,7 @@
 
         <!-- Quick Links -->
         <div class="flex flex-wrap items-center gap-6 text-xs font-heading font-semibold uppercase tracking-wider text-flp-white/70">
-          <a href="index.html" class="hover:text-flp-gold transition-colors">Home</a>
+          <a href="index.html" class="text-flp-gold transition-colors">Home</a>
           <a href="about.html" class="hover:text-flp-gold transition-colors">About</a>
           <a href="departments.html" class="hover:text-flp-gold transition-colors">Departments</a>
           <a href="team.html" class="hover:text-flp-gold transition-colors">Our Team</a>
