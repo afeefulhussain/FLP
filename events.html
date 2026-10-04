@@ -316,9 +316,9 @@
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-flp-gold-muted">
         <div>
-          <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block mb-1">Explore All Sessions</span>
+          <span class="text-xs font-heading font-bold uppercase tracking-widest text-flp-gold block mb-1">Session 2026–2027 Schedule</span>
           <h2 class="text-3xl sm:text-4xl font-heading font-black text-flp-white uppercase tracking-tight">
-            Events Directory
+            Upcoming Events &amp; Summits
           </h2>
         </div>
 
@@ -327,7 +327,7 @@
           <input 
             type="text" 
             id="event-search" 
-            placeholder="Search events, speakers, dept..." 
+            placeholder="Search upcoming events, topics, depts..." 
             oninput="filterEvents()"
             class="w-full bg-flp-green-dark border border-flp-gold-border rounded-sm px-4 py-2.5 pl-10 text-xs font-body text-flp-white placeholder-flp-white/50 focus:outline-none focus:border-flp-gold transition-colors"
           />
@@ -340,7 +340,7 @@
       <!-- Filter Category Buttons -->
       <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-12" id="filter-buttons">
         <button onclick="setCategory('all', this)" class="category-btn active px-4 py-2 rounded-sm text-xs font-heading font-bold uppercase tracking-wider bg-flp-gold text-flp-green border border-flp-gold transition-all">
-          All Events (<span id="count-all">7</span>)
+          All Upcoming Events (<span id="count-all">7</span>)
         </button>
         <button onclick="setCategory('women', this)" class="category-btn px-4 py-2 rounded-sm text-xs font-heading font-semibold uppercase tracking-wider bg-flp-green-dark text-flp-white/80 border border-flp-gold-muted hover:border-flp-gold hover:text-flp-gold transition-all">
           Women & Leadership
@@ -363,15 +363,15 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="events-grid">
         
         <!-- CARD 0: Women’s Empowerment Summit & Nissa Awards 2026 -->
-        <div class="event-card bg-flp-green-dark border-2 border-flp-gold rounded-sm overflow-hidden flex flex-col justify-between shadow-xl" data-category="women" data-keywords="women empowerment summit nissa awards leadership innovation impact female 2026 glass ceiling changemakers">
+        <div class="event-card bg-flp-green-dark border-2 border-flp-gold rounded-sm overflow-hidden flex flex-col justify-between shadow-xl" data-category="women" data-keywords="upcoming women empowerment summit nissa awards leadership innovation impact female 2026 glass ceiling changemakers">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold text-flp-green text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Women Caucus
+                Upcoming Flagship Summit
               </span>
               <span class="text-[11px] font-heading font-bold text-yellow-400 flex items-center gap-1">
                 <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
-                Countdown Active
+                2026 Countdown Active
               </span>
             </div>
 
@@ -406,14 +406,15 @@
         </div>
         
         <!-- CARD 1: Law Webinar (Nisa Ara) -->
-        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="law" data-keywords="law constitutional nisa ara webinar judicial parliament fundamental rights legal">
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="law" data-keywords="upcoming law constitutional nisa ara webinar judicial parliament fundamental rights legal masterclass">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Law Department
+                Upcoming Masterclass
               </span>
-              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
-                Webinar Series
+              <span class="text-[11px] font-heading font-semibold text-green-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Registrations Open
               </span>
             </div>
 
@@ -435,33 +436,34 @@
                 <span class="text-flp-gold">📍</span> <span>Online Digital Session (Zoom)</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="text-flp-gold">👥</span> <span>250+ Registered Delegates</span>
+                <span class="text-flp-gold">👥</span> <span>Limited Seats • Apply Online</span>
               </div>
             </div>
           </div>
 
           <div class="p-6 pt-0">
             <a href="event-law-webinar.html" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:bg-transparent hover:text-flp-gold border border-flp-gold transition-all duration-200">
-              <span>View Full Description & Replay</span>
+              <span>View Details & Register</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
 
         <!-- CARD 2: Parliamentary Simulation NYPS 2026 -->
-        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="parliament" data-keywords="national youth parliamentary simulation nyps shadow cabinet debate bills voting assembly">
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="parliament" data-keywords="upcoming national youth parliamentary simulation nyps shadow cabinet debate bills voting assembly 2026">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Secretariat Assembly
+                Upcoming Simulation
               </span>
-              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
-                Annual Simulation
+              <span class="text-[11px] font-heading font-semibold text-green-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Delegate Intake Open
               </span>
             </div>
 
             <h3 class="text-xl font-heading font-extrabold text-flp-white uppercase tracking-tight mb-2 hover:text-flp-gold transition-colors">
-              <a href="event-detail.html?id=parliamentary-simulation">National Youth Parliamentary Simulation (NYPS)</a>
+              <a href="event-detail.html?id=parliamentary-simulation">National Youth Parliamentary Simulation (NYPS 2026)</a>
             </h3>
 
             <div class="text-xs text-flp-gold font-heading font-semibold mb-3 flex items-center gap-1.5">
@@ -485,21 +487,22 @@
 
           <div class="p-6 pt-0">
             <a href="event-detail.html?id=parliamentary-simulation" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
-              <span>View Full Description</span>
+              <span>View Details & Apply</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
 
         <!-- CARD 3: Diplomacy & Global Affairs Summit -->
-        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="diplomacy" data-keywords="diplomacy foreign affairs international relations bilateral treaties un youth summit global">
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="diplomacy" data-keywords="upcoming diplomacy foreign affairs international relations bilateral treaties un youth summit global 2026">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Foreign Affairs
+                Upcoming Summit
               </span>
-              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
-                Diplomatic Summit
+              <span class="text-[11px] font-heading font-semibold text-green-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Nominations Open
               </span>
             </div>
 
@@ -528,21 +531,22 @@
 
           <div class="p-6 pt-0">
             <a href="event-detail.html?id=diplomacy-summit" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
-              <span>View Full Description</span>
+              <span>View Details & Register</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
 
         <!-- CARD 4: Climate Resilience Forum -->
-        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="climate change environment green energy sustainability legislation policy ecology">
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="upcoming climate change environment green energy sustainability legislation policy ecology 2026">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Climate Protection
+                Upcoming Forum
               </span>
-              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
-                Policy Roundtable
+              <span class="text-[11px] font-heading font-semibold text-green-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Registrations Open
               </span>
             </div>
 
@@ -571,21 +575,22 @@
 
           <div class="p-6 pt-0">
             <a href="event-detail.html?id=climate-forum" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
-              <span>View Full Description</span>
+              <span>View Details & Register</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
 
         <!-- CARD 5: Women in Governance Masterclass -->
-        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="women leadership governance human rights social welfare female parliamentarians masterclass">
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="upcoming women leadership governance human rights social welfare female parliamentarians masterclass 2026">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Human Rights & Social Welfare
+                Upcoming Cohort
               </span>
-              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
-                Leadership Series
+              <span class="text-[11px] font-heading font-semibold text-green-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Cohort Applications Open
               </span>
             </div>
 
@@ -614,21 +619,22 @@
 
           <div class="p-6 pt-0">
             <a href="event-detail.html?id=women-in-governance" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
-              <span>View Full Description</span>
+              <span>View Details & Apply</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
 
         <!-- CARD 6: Economic Revival & Digital Economy -->
-        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="economy finance macroeconomic it technology startups digital youth employment taxation">
+        <div class="event-card bg-flp-green-dark border border-flp-gold-border rounded-sm overflow-hidden flex flex-col justify-between" data-category="policy" data-keywords="upcoming economy finance macroeconomic it technology startups digital youth employment taxation 2026">
           <div class="p-6 sm:p-7">
             <div class="flex items-center justify-between gap-2 mb-4">
               <span class="px-2.5 py-1 bg-flp-gold/15 text-flp-gold border border-flp-gold/40 text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
-                Finance & IT Affairs
+                Upcoming Colloquium
               </span>
-              <span class="text-[11px] font-heading font-semibold text-flp-white/60">
-                Colloquium
+              <span class="text-[11px] font-heading font-semibold text-green-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Delegate Intake Open
               </span>
             </div>
 
@@ -657,7 +663,7 @@
 
           <div class="p-6 pt-0">
             <a href="event-detail.html?id=economic-colloquium" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-transparent text-flp-white font-heading font-bold text-xs uppercase tracking-wider rounded-sm hover:border-flp-gold hover:text-flp-gold border border-flp-gold-border transition-all duration-200">
-              <span>View Full Description</span>
+              <span>View Details & Register</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
