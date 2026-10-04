@@ -276,8 +276,8 @@
         <div onclick="openMemberModal('hamid')" class="team-card bg-flp-green-dark p-8 border border-flp-gold-border hover:border-flp-gold rounded-sm shadow-md flex flex-col justify-between cursor-pointer group hover:-translate-y-1 transition-all duration-300">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <div class="w-16 h-16 rounded-full bg-flp-green border border-flp-gold flex items-center justify-center text-flp-gold font-heading font-bold text-xl">
-                HI
+              <div class="w-16 h-16 rounded-full bg-flp-green border-2 border-flp-gold overflow-hidden flex items-center justify-center text-flp-gold font-heading font-bold text-xl shadow-md">
+                <img src="hamid.jpg" alt="Hamid Ilyas — General Secretary" class="w-full h-full object-cover object-[center_20%]" />
               </div>
               <span class="px-2.5 py-1 bg-flp-green-card text-flp-gold/90 border border-flp-gold-muted text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
                 Secretariat
@@ -345,8 +345,8 @@
         <div onclick="openMemberModal('afeef')" class="team-card bg-flp-green-dark p-8 border border-flp-gold-border hover:border-flp-gold rounded-sm shadow-md flex flex-col justify-between cursor-pointer group hover:-translate-y-1 transition-all duration-300">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <div class="w-16 h-16 rounded-full bg-flp-green border border-flp-gold flex items-center justify-center text-flp-gold font-heading font-bold text-xl">
-                AH
+              <div class="w-16 h-16 rounded-full bg-flp-green border-2 border-flp-gold overflow-hidden flex items-center justify-center text-flp-gold font-heading font-bold text-xl shadow-md">
+                <img src="afeef.jpg" alt="Afeef Ul Hussain — Vice President" class="w-full h-full object-cover object-[center_12%]" />
               </div>
               <span class="px-2.5 py-1 bg-flp-green-card text-flp-gold/90 border border-flp-gold-muted text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
                 Executive Cabinet
@@ -368,8 +368,8 @@
         <div onclick="openMemberModal('fajar')" class="team-card bg-flp-green-dark p-8 border border-flp-gold-border hover:border-flp-gold rounded-sm shadow-md flex flex-col justify-between cursor-pointer group hover:-translate-y-1 transition-all duration-300">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <div class="w-16 h-16 rounded-full bg-flp-green border border-flp-gold flex items-center justify-center text-flp-gold font-heading font-bold text-xl">
-                FM
+              <div class="w-16 h-16 rounded-full bg-flp-green border-2 border-flp-gold overflow-hidden flex items-center justify-center text-flp-gold font-heading font-bold text-xl shadow-md">
+                <img src="fajar.jpg" alt="Fajar Mehmood — Vice President" class="w-full h-full object-cover object-[center_22%]" />
               </div>
               <span class="px-2.5 py-1 bg-flp-green-card text-flp-gold/90 border border-flp-gold-muted text-[10px] font-heading font-bold uppercase tracking-wider rounded-sm">
                 Executive Cabinet
@@ -556,8 +556,7 @@
         name: "Hamid Ilyas",
         title: "General Secretary",
         tag: "Executive Secretariat",
-        image: "",
-        monogram: "HI",
+        image: "hamid.jpg",
         bio: "Hamid Ilyas directs the Executive Secretariat of the FLP Punjab Cabinet, ensuring streamlined organizational coordination, official diplomatic communications, parliamentary record keeping, and inter-chapter administrative harmony.",
         focus: [
           "Secretariat operations and official institutional record maintenance",
@@ -596,8 +595,7 @@
         name: "Afeef Ul Hussain",
         title: "Vice President",
         tag: "Executive Cabinet",
-        image: "",
-        monogram: "AH",
+        image: "afeef.jpg",
         bio: "Afeef Ul Hussain serves as Vice President in the Executive Cabinet, managing assembly logistics, youth civic boot camps, delegate accreditations, and event operations across all major parliamentary summits.",
         focus: [
           "Assembly logistics, stage management, and plenary infrastructure",
@@ -610,8 +608,7 @@
         name: "Fajar Mehmood",
         title: "Vice President",
         tag: "Executive Cabinet",
-        image: "",
-        monogram: "FM",
+        image: "fajar.jpg",
         bio: "Fajar Mehmood serves as Vice President in the Executive Cabinet, leading media communications, public relations, delegate welfare, and student community outreach across Punjab's academic institutions.",
         focus: [
           "Media relations, digital broadcasting, and institutional press releases",
@@ -650,6 +647,12 @@
           modalImg.className = 'w-full h-full object-cover object-[center_28%]';
         } else if (memberKey === 'amina') {
           modalImg.className = 'w-full h-full object-cover object-[center_18%]';
+        } else if (memberKey === 'afeef') {
+          modalImg.className = 'w-full h-full object-cover object-[center_12%]';
+        } else if (memberKey === 'hamid') {
+          modalImg.className = 'w-full h-full object-cover object-[center_20%]';
+        } else if (memberKey === 'fajar') {
+          modalImg.className = 'w-full h-full object-cover object-[center_22%]';
         } else {
           modalImg.className = 'w-full h-full object-cover object-top';
         }
