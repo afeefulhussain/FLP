@@ -1,0 +1,6 @@
+# Robots.txt for Future Leaders Parliament (FLP)
+User-agent: *
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://afeefulhussain.github.io/FLP/sitemap.xml

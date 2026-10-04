@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D77F" />
+      <stop offset="50%" stop-color="#D2A23C" />
+      <stop offset="100%" stop-color="#8C6518" />
+    </linearGradient>
+    <radialGradient id="greenBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#034825" />
+      <stop offset="100%" stop-color="#01190D" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="248" fill="url(#greenBg)" stroke="url(#goldGrad)" stroke-width="12" />
+
+  <!-- Inner Ornate Ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-dasharray="8 6" opacity="0.8" />
+
+  <!-- Parliament Dome & Pillars Silhouette -->
+  <!-- Dome Top -->
+  <path d="M 256 100 Q 200 150 200 185 L 312 185 Q 312 150 256 100 Z" fill="url(#goldGrad)" />
+  <circle cx="256" cy="92" r="10" fill="url(#goldGrad)" />
+  
+  <!-- Pediment Triangular Arch -->
+  <polygon points="170,210 256,170 342,210" fill="url(#goldGrad)" />
+  
+  <!-- Entablature bar -->
+  <rect x="160" y="210" width="192" height="16" rx="3" fill="url(#goldGrad)" />
+
+  <!-- Pillars / Columns -->
+  <!-- Col 1 -->
+  <rect x="176" y="226" width="16" height="110" fill="url(#goldGrad)" />
+  <!-- Col 2 -->
+  <rect x="212" y="226" width="16" height="110" fill="url(#goldGrad)" />
+  <!-- Col 3 -->
+  <rect x="248" y="226" width="16" height="110" fill="url(#goldGrad)" />
+  <!-- Col 4 -->
+  <rect x="284" y="226" width="16" height="110" fill="url(#goldGrad)" />
+  <!-- Col 5 -->
+  <rect x="320" y="226" width="16" height="110" fill="url(#goldGrad)" />
+
+  <!-- Column Bases / Capital Caps -->
+  <rect x="168" y="336" width="176" height="16" rx="3" fill="url(#goldGrad)" />
+  <rect x="150" y="352" width="212" height="18" rx="4" fill="url(#goldGrad)" />
+  <rect x="135" y="370" width="242" height="20" rx="4" fill="url(#goldGrad)" />
+
+  <!-- Laurel Wreath Leaves (Left) -->
+  <path d="M 120 310 Q 95 240 125 170 Q 130 195 140 220 Q 115 265 135 300 Z" fill="url(#goldGrad)" opacity="0.9" />
+  <path d="M 105 270 Q 80 210 115 150 Q 120 175 130 200 Q 100 240 115 270 Z" fill="url(#goldGrad)" opacity="0.75" />
+
+  <!-- Laurel Wreath Leaves (Right) -->
+  <path d="M 392 310 Q 417 240 387 170 Q 382 195 372 220 Q 397 265 377 300 Z" fill="url(#goldGrad)" opacity="0.9" />
+  <path d="M 407 270 Q 432 210 397 150 Q 392 175 382 200 Q 412 240 397 270 Z" fill="url(#goldGrad)" opacity="0.75" />
+
+  <!-- Center Star of Excellence -->
+  <polygon points="256,400 262,416 279,416 265,426 270,442 256,432 242,442 247,426 233,416 250,416" fill="#FFFFFF" filter="url(#glow)" />
+</svg>

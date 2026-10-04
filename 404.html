@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  
+  <title>404 - Page Not Found | Future Leaders Parliament (FLP)</title>
+  <meta name="description" content="The page you are looking for does not exist on Future Leaders Parliament (FLP). Navigate back to our official portal, explore events, or apply for membership." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flp: {
+              green: '#022F18',
+              gold: '#D2A23C',
+              white: '#FFFFFF',
+              'green-dark': '#011c0e',
+              'green-card': '#033b1e',
+              'gold-muted': 'rgba(210, 162, 60, 0.2)',
+              'gold-border': 'rgba(210, 162, 60, 0.35)'
+            }
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 162, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 162, 60, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-flp-green text-flp-white font-body antialiased selection:bg-flp-gold selection:text-flp-green min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-flp-green/95 backdrop-blur-md border-b border-flp-gold-muted transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Future Leaders Parliament Official Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain group-hover:scale-105 transition-transform" />
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-sm sm:text-base tracking-tight text-flp-white uppercase group-hover:text-flp-gold transition-colors">Future Leaders</span>
+          <span class="font-heading font-extrabold text-xs sm:text-sm tracking-widest text-flp-gold uppercase -mt-1">Parliament</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Home</a>
+        <a href="about.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">About</a>
+        <a href="departments.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Departments</a>
+        <a href="team.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Our Team</a>
+        <a href="events.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Events</a>
+        <a href="join.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Join Us</a>
+        <a href="contact.html" class="text-xs font-heading font-semibold tracking-widest uppercase text-flp-white/80 hover:text-flp-gold transition-colors pb-1">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-flp-gold text-flp-green font-heading font-bold text-xs tracking-wider uppercase rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200">
+          Return to Portal
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 404 Main Section -->
+  <main class="flex-1 flex items-center justify-center pt-28 pb-16 px-6 bg-grid-pattern relative overflow-hidden">
+    <div class="max-w-2xl w-full text-center py-12 relative z-10">
+      
+      <!-- Emblem / Badge -->
+      <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-flp-gold/10 border-2 border-flp-gold/40 mb-6 shadow-2xl animate-bounce duration-1000">
+        <span class="text-4xl font-heading font-black text-flp-gold">404</span>
+      </div>
+
+      <div class="inline-block px-3.5 py-1.5 rounded-full bg-flp-gold-muted/40 border border-flp-gold-border mb-4">
+        <span class="text-xs font-heading font-semibold uppercase tracking-widest text-flp-gold">Session Out of Order</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-heading font-black tracking-tight text-flp-white uppercase">
+        Page Not <span class="text-flp-gold">Found</span>
+      </h1>
+      
+      <p class="mt-4 text-sm sm:text-base text-slate-300 max-w-lg mx-auto leading-relaxed">
+        The parliamentary resolution, document, or page you are looking for has been adjourned, moved, or does not exist on this server.
+      </p>
+
+      <!-- Quick Action Directory -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="index.html" class="px-6 py-3 bg-flp-gold text-flp-green font-heading font-bold text-xs uppercase tracking-widest rounded-sm border border-flp-gold hover:bg-transparent hover:text-flp-gold transition-all duration-200 shadow-xl">
+          Back to Homepage
+        </a>
+        <a href="events.html" class="px-6 py-3 bg-transparent text-flp-white font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold-border hover:border-flp-gold hover:text-flp-gold transition-all duration-200">
+          Browse Events
+        </a>
+        <a href="join.html" class="px-6 py-3 bg-flp-green-card text-flp-gold font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-flp-gold/40 hover:border-flp-gold transition-all duration-200">
+          Become a Member
+        </a>
+        <a href="contact.html" class="px-6 py-3 bg-transparent text-slate-300 font-heading font-semibold text-xs uppercase tracking-widest rounded-sm border border-white/20 hover:border-white hover:text-white transition-all duration-200">
+          Contact Secretariat
+        </a>
+      </div>
+
+      <div class="mt-8 text-xs text-slate-400">
+        Need assistance? Message our official WhatsApp helpline at 
+        <a href="https://wa.me/923286444392" target="_blank" rel="noopener noreferrer" class="text-flp-gold underline font-medium hover:text-white">+92 328 6444392</a>.
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-flp-green-dark text-slate-400 text-xs py-6 border-t border-flp-gold-muted text-center">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>&copy; 2026 Future Leaders Parliament (FLP). All Rights Reserved.</div>
+      <div class="flex items-center gap-5">
+        <a href="privacy.html" class="hover:text-flp-gold">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-flp-gold">Terms of Service</a>
+        <a href="sitemap.xml" class="hover:text-flp-gold">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site-core.js"></script>
+</body>
+</html>
